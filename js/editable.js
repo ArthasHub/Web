@@ -21,14 +21,24 @@ function tdclick() {
 	input.blur(function(event) {
 
 		var inputnode = $(this);
-		//2 获取当前文本框的内容  
+		//2 获取当前文本框的内容
+
 		var inputtext = inputnode.val();
 		//3 清空td里面的内容  
 		var tdNode = inputnode.parent();
 		//4 保存文本框的内容填充到td中  
 		tdNode.html(inputtext);
-		//5 让td重新拥有点击事件  
+		//5 让td重新拥有点击事件 
+
 		tdNode.click(tdclick);
+		var status = $(sel).val();
+		var title ;
+		var price;
+		var comment ;
+		var type;
+		var name;
+		var df;
+
 	});
 	//5 将文本内容加入td  
 	td.append(input); //也可input.appendto(td)  

@@ -32,6 +32,9 @@
 		td input[type=text] {
 			width: 100%;
 		}
+		.hide{
+			visibility: false;
+		}
 	</style>
 	<body>
 		
@@ -45,24 +48,41 @@
 					<td class="editable" width="100px"><span>我了个去</span></td><td class="editable" width="100px"><span>我了个去</span></td>
 				</tr>
 			
-				<input type="submit" onsubmit="return fun1();" />
+				
 			</tbody>
 		</table>
 		<div id="draw"></div>
 				
 		<!-- 存储 js-->
 		<!-- Latest compiled and minified JS -->
+
 		<script src="/Web/js/jquery.js"></script>
-		<script src="/Web/js/drawtable.js"></script>
+
+	<script src="/Web/js/drawtable.js"></script>
 		<script src="/Web/js/editable.js"></script>
-	<script >
-	function fun1(){
 
-		return false |true;
-	}
-	</script>
-		
-
-		
+	
+		<script type="text/javascript" src="/Web/js/data.js"></script>
+	
+	<div id="dataIn">
+	<label >Maker</label>
+	<input type="text" id="ipt1" name="ipt1"/>
+	<label >DF</label>
+	<input type="text" id="ipt2" name="ipt2"/>
+	<label >name</label>
+	<input type="text" id="ipt3" name="ipt3"/>
+	<label >type</label>
+	<input type="text" id="ipt4" name="ipt4"/>
+	<input type="text" id="ipt5" name="ipt5"/>
+	<input type="text" id="ipt6" name="ipt6"/>
+	
+	<input type="button" id="cre" value="添加数据"/>
+	</div>
+	
+	<select name="" id="sel">
+		<option value="title" >title</option>
+		<option value="df" >df</option>
+		<option value="type"  selected="true">type</option>
+	</select>
 	</body>
 </html>
