@@ -4,8 +4,8 @@ $(document).ready(function() {
 	 */
 	var str = new String('[{"title":"YO","str1":"定番1","str2":"yt","str3":"200/65R15"},{"title":"YO","str1":"定番1","str2":"yt","str3":"195/65R15"},{"title":"YO","str1":"定番2","str2":"rte","str3":"175/65R14"},{"title":"YO","str1":"ミニバン","str2":"ert","str3":"195/65R15"},{"title":"BS","str1":"定番1","str2":"qw","str3":"195/65R15"},{"title":"BS","str1":"定番1","str2":"qw","str3":"175/65R14"},{"title":"BS","str1":"定番1","str2":"qw","str3":"155/65R14"},{"title":"BS","str1":"定番1","str2":"qw","str3":"155/65R13"},{"title":"BS","str1":"定番2","str2":"we","str3":"195/65R15"},{"title":"BS","str1":"定番2","str2":"we","str3":"175/65R14"},{"title":"BS","str1":"定番2","str2":"we","str3":"155/65R14"},{"title":"BS","str1":"定番2","str2":"we","str3":"155/65R13"},{"title":"BS","str1":"ミニバン","str2":"er","str3":"195/65R15"},{"title":"BS","str1":"ミニバン","str2":"er","str3":"205/60R16"}]');
 	var fo = paserJSONtoDF(str);
-	draw(fo,"df");
-	
+	draw(fo, "df");
+
 });
 
 //!~ object parserJSON(string)
@@ -31,6 +31,7 @@ $(document).ready(function() {
 	"name":"qw"
 	"detail":[
 		{
+			"id":"inc-0001"
 			"type":"175/65R",
 			"price":"",
 			"comment":""
@@ -157,9 +158,9 @@ function drawTableBy(JSONStr, what) {
 }*/
 
 
-function draw(JSONStr,what){
+function draw(JSONStr, what) {
 	if (what) {
-		if(what == "title"){
+		if (what == "title") {
 			drawTableByTitle(JSONStr);
 			console.log("****drawByTitle*****");
 		} else if (what == "df") {
@@ -174,17 +175,57 @@ function draw(JSONStr,what){
 	}
 }
 
-function drawTableByType(JSONStr){
-	var item =  $('<div></div>');
+function drawTableByType(JSONStr) {
+	var item = $('<div></div>');
 	var head = $('<div id="" class="head"><span>サイズ</span></div>');
 	var table = $('<table></table>');
 	var th = $('<thead><tr> <td>タイヤサイズ</td>  <td>メーカー名</td>  <td>ブランド名</td>  <td>販売価格（4本税込）</td>  <td>備考</td> </tr></thead>');
 	var tb = $('<tbody><tbody>');
 	//Todo :deal with data
-	
+	//deal to ADT :
+	/*[{
+		"title": "BS",
+		"df": "定番1",
+		"name": "qw"
+		"detail": [{
+			"id": "inc-0001"
+			"type": "175/65R",
+			"price": "",
+			"comment": ""
+		}， 。。。。。]
+	}]*/
+	var list = new Array();
+	for (var i = 0; i < JSONStr.length; i++) {
+		for (var j = 0; j < JSONStr[i].detail.length; j++) {
+			var tem = JSONStr[i].detail[j];
+			var k = 0;
+			for (; k < list.length; k++) {
+				if ($(list[k]).children('div').attr('id') == tem.type) {
+					break;
+				};
+			};
+			if (k == list.length) {
+				//new and init
+				var group = $('<tbody id="' + tem.type + '"></tbody>');
+				var tr = $('<tr> <td>'+tem.type+'</td>  <td>'+JSONStr[i].title+'</td>  <td>'+JSONStr[i].name+'</td>  <td>'+tem.price+'</td>  <td>'+tem.comment+'</td> </tr>');
+				$(group).append(tr);
+				list.push(group);
+			}else{
+				//new
+				var tr = $('<tr> <td></td>  <td>'+JSONStr[i].title+'</td>  <td>'+JSONStr[i].name+'</td>  <td>'+tem.price+'</td>  <td>'+tem.comment+'</td> </tr>');
+				$(list[k]).append(tr);
+			}
 
+		};
+	};
+
+	$(table).append(th).append(tb);
+	$(item).append(head);
+	$(item).append(table);
+	$('#draw').append(item);
 }
-function drawTableByTitle(JSONStr){
+
+function drawTableByTitle(JSONStr) {
 
 	var items = new Array();
 	for (var i = 0; i < JSONStr.length; i++) {
@@ -209,16 +250,16 @@ function drawTableByTitle(JSONStr){
 			$(item).append(head);
 			$(item).append(table);
 			items.push(item);
-		} 
-			//new Item 
-			//draw new Item
-			//items[j]; 为当前选定的item
-			var tds = $('<tr> <td>' + JSONStr[i].df + '</td>  <td>' + JSONStr[i].name + '</td>  <td>' + JSONStr[i].detail[0].type + '</td>  <td class="editable">' + JSONStr[i].detail[0].price + '</td>  <td class="editable">' + JSONStr[i].detail[0].comment + '</td> </tr>');
+		}
+		//new Item 
+		//draw new Item
+		//items[j]; 为当前选定的item
+		var tds = $('<tr> <td>' + JSONStr[i].df + '</td>  <td>' + JSONStr[i].name + '</td>  <td>' + JSONStr[i].detail[0].type + '</td>  <td class="editable">' + JSONStr[i].detail[0].price + '</td>  <td class="editable">' + JSONStr[i].detail[0].comment + '</td> </tr>');
+		$(items[j]).children('table').children('tbody').append(tds);
+		for (var k = 1; k < JSONStr[i].detail.length; k++) {
+			tds = $('<tr> <td></td>  <td></td>  <td>' + JSONStr[i].detail[k].type + '</td>  <td class="editable">' + JSONStr[i].detail[k].price + '</td>  <td class="editable">' + JSONStr[i].detail[k].comment + '</td> </tr>');
 			$(items[j]).children('table').children('tbody').append(tds);
-			for (var k = 1; k < JSONStr[i].detail.length; k++) {
-				tds = $('<tr> <td></td>  <td></td>  <td>' + JSONStr[i].detail[k].type + '</td>  <td class="editable">' + JSONStr[i].detail[k].price + '</td>  <td class="editable">' + JSONStr[i].detail[k].comment + '</td> </tr>');
-				$(items[j]).children('table').children('tbody').append(tds);
-			};
+		};
 
 	};
 
@@ -226,8 +267,9 @@ function drawTableByTitle(JSONStr){
 		$("#draw").append(items[w]);
 	};
 }
+
 function drawTableByDF(JSONStr) {
-	
+
 	var items = new Array();
 	for (var i = 0; i < JSONStr.length; i++) {
 		var j = 0
@@ -251,16 +293,16 @@ function drawTableByDF(JSONStr) {
 			$(item).append(head);
 			$(item).append(table);
 			items.push(item);
-		} 
-			//new Item 
-			//draw new Item
-			//items[j]; 为当前选定的item
-			var tds = $('<tr> <td>' + JSONStr[i].title + '</td>  <td>' + JSONStr[i].name + '</td>  <td>' + JSONStr[i].detail[0].type + '</td>  <td class="editable">' + JSONStr[i].detail[0].price + '</td>  <td class="editable">' + JSONStr[i].detail[0].comment + '</td> </tr>');
+		}
+		//new Item 
+		//draw new Item
+		//items[j]; 为当前选定的item
+		var tds = $('<tr> <td>' + JSONStr[i].title + '</td>  <td>' + JSONStr[i].name + '</td>  <td>' + JSONStr[i].detail[0].type + '</td>  <td class="editable">' + JSONStr[i].detail[0].price + '</td>  <td class="editable">' + JSONStr[i].detail[0].comment + '</td> </tr>');
+		$(items[j]).children('table').children('tbody').append(tds);
+		for (var k = 1; k < JSONStr[i].detail.length; k++) {
+			tds = $('<tr> <td></td>  <td></td>  <td>' + JSONStr[i].detail[k].type + '</td>  <td class="editable">' + JSONStr[i].detail[k].price + '</td>  <td class="editable">' + JSONStr[i].detail[k].comment + '</td> </tr>');
 			$(items[j]).children('table').children('tbody').append(tds);
-			for (var k = 1; k < JSONStr[i].detail.length; k++) {
-				tds = $('<tr> <td></td>  <td></td>  <td>' + JSONStr[i].detail[k].type + '</td>  <td class="editable">' + JSONStr[i].detail[k].price + '</td>  <td class="editable">' + JSONStr[i].detail[k].comment + '</td> </tr>');
-				$(items[j]).children('table').children('tbody').append(tds);
-			};
+		};
 
 	};
 
