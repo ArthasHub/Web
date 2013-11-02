@@ -14,7 +14,7 @@ $(document).ready(function() {
 	//给所有td节点添加点击事件  
 		tds.click(tdclick);
 	});
-
+	
 	alert(paserJSONtoStr(DataObj));
 });
 

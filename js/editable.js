@@ -38,6 +38,16 @@ function tdclick() {
 		var type;
 		var name;
 		var df;
+		if (status == 'df') {
+			df = tdNode.parent().parent().parent().siblings('div:eq(0)').html();
+		}else if (status ==  'title') {
+
+		} else if (status == 'type') {
+
+		} else{
+			console.log("Input error -> editable.js:bad status");
+		};
+		
 
 	});
 	//5 将文本内容加入td  
