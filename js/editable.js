@@ -1,9 +1,4 @@
-$(document).ready(function() {
-	//找到所有td节点  
-	var tds = $(".editable");
-	//给所有td节点添加点击事件  
-	tds.click(tdclick);
-});
+
 //td被点击的事件  
 
 function tdclick() {
@@ -31,23 +26,22 @@ function tdclick() {
 		//5 让td重新拥有点击事件 
 
 		tdNode.click(tdclick);
-		var status = $(sel).val();
-		var title ;
-		var price;
-		var comment ;
-		var type;
-		var name;
-		var df;
-		if (status == 'df') {
-			df = tdNode.parent().parent().parent().siblings('div:eq(0)').html();
-		}else if (status ==  'title') {
+		var bindID = tdNode.parent('tr').attr('id');
+		var bindPrice = tdNode.parent('tr').children('td:eq(3)').html();
+		var bindComment = tdNode.parent('tr').children('td:eq(4)').html();
+		for (var i = 0; i < DataObj.length; i++) {
+			for (var j = 0; j < DataObj[i].detail.length; j++) {
+				DataObj[i].detail[j];
+				if (bindID == DataObj[i].detail[j].bindID) {
+					DataObj[i].detail[j].price = bindPrice;
+					DataObj[i].detail[j].comment = bindComment;		
+					break;
+				};
 
-		} else if (status == 'type') {
-
-		} else{
-			console.log("Input error -> editable.js:bad status");
+			};
 		};
 		
+
 
 	});
 	//5 将文本内容加入td  
