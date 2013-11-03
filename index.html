@@ -58,6 +58,8 @@
 		<!-- Latest compiled and minified JS -->
 
 		<script src="/Web/js/jquery.js"></script>
+		
+
 
 	<script src="/Web/js/drawtable.js"></script>
 		<script src="/Web/js/editable.js"></script>
@@ -65,27 +67,56 @@
 	
 		<script type="text/javascript" src="/Web/js/data.js"></script>
 	
-	<div id="dataIn">
-	<label >Maker</label>
-	<input type="text" id="ipt1" name="ipt1"/>
-	<label >DF</label>
-	<input type="text" id="ipt2" name="ipt2"/>
-	<label >name</label>
-	<input type="text" id="ipt3" name="ipt3"/>
-	<label >type</label>
-	<input type="text" id="ipt4" name="ipt4"/>
-	<input type="text" id="ipt5" name="ipt5"/>
-	<input type="text" id="ipt6" name="ipt6"/>
-	
-	<input type="button" id="cre" value="添加数据"/>
-	</div>
+
 	
 	<select name="" id="sel">
-		<option value="title" >title</option>
+		<option value="title"  selected="true" >title</option>
 		<option value="df" >df</option>
-		<option value="type"  selected="true">type</option>
+		<option value="type" >type</option>
 	</select>
 
-	<div id="newDraw"></div>
+	<input type="button" id="cre" value="添加数据"/>
+
+	<table id="newDraw" style="border: solid thin black;width:800px">
+         <tr style="background-color: lightgray">
+            <td>
+            <font color="red">メーカー名</font>
+            </td>
+            <td>
+            タイプ
+
+            </td>
+            <td>
+            <font color="red">ブランド</font>
+
+            </td>
+            <td>
+            <font color="red">サイズ</font>
+
+            </td>
+            <td>
+           <font color="red"> 価格（4本税込）</font>
+
+            </td>
+            <td>
+            備考
+
+            </td>          
+         </tr>
+         <tr>
+           <td><input id="ipt1" width="130px"  type="text" value="必須" onfocus="if(this.value==defaultValue){this.value='';this.className='black'}"
+                                onblur="if(!value){this.value=defaultValue;this.className='gray'}"/></td>
+           <td><input id="ipt2" width="130px" type="text" /></td>
+           <td> <input id="ipt3" width="130px" type="text" value="必須" onfocus="if(this.value==defaultValue){this.value='';this.className='black'}"
+                                onblur="if(!value){this.value=defaultValue;this.className='gray'}"/></td>
+           <td> <input id="ipt4" width="130px" type="text" value="必須" onfocus="if(this.value==defaultValue){this.value='';this.className='black'}"
+                                onblur="if(!value){this.value=defaultValue;this.className='gray'}"/></td>
+           <td> <input id="ipt5" width="130px" type="text" value="必須" onfocus="if(this.value==defaultValue){this.value='';this.className='black'}"
+                                onblur="if(!value){this.value=defaultValue;this.className='gray'}"/></td>
+           <td> <input id="ipt6" width="130px" type="text"/></td>          
+         </tr>
+      </table>
+	
+
 	</body>
 </html>

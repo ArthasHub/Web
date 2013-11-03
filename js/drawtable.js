@@ -1,14 +1,24 @@
 // DataJSON = new String('[{"title":"BS","name":"","research":"","str1":"定番1","str2":"qw","str3":"195/65R15","price":"","note":""},{"title":"BS","name":"","research":"","str1":"定番1","str2":"qw","str3":"175/65R14","price":"","note":""},{"title":"BS","name":"","research":"","str1":"定番1","str2":"qw","str3":"155/65R14","price":"","note":""},{"title":"BS","name":"","research":"","str1":"定番1","str2":"qw","str3":"155/65R13","price":"","note":""},{"title":"BS","name":"","research":"","str1":"定番2","str2":"we","str3":"195/65R15","price":"","note":""},{"title":"BS","name":"","research":"","str1":"定番2","str2":"we","str3":"175/65R14","price":"","note":""},{"title":"BS","name":"","research":"","str1":"定番2","str2":"we","str3":"155/65R14","price":"","note":""},{"title":"BS","name":"","research":"","str1":"定番2","str2":"we","str3":"155/65R13","price":"","note":""},{"title":"BS","name":"","research":"","str1":"ミニバン","str2":"er","str3":"205/60R16","price":"","note":""},{"title":"BS","name":"","research":"","str1":"ミニバン","str2":"er","str3":"195/65R15","price":"","note":""},{"title":"YO","name":"","research":"","str1":"定番1","str2":"yt","str3":"195/65R15","price":"","note":""},{"title":"YO","name":"","research":"","str1":"定番2","str2":"rte","str3":"175/65R14","price":"","note":""},{"title":"YO","name":"","research":"","str1":"ミニバン","str2":"ert","str3":"195/65R15","price":"","note":""},{"title":"DU","name":"","research":"","str1":"定番1","str2":"eert","str3":"195/65R15","price":"","note":""},{"title":"DU","name":"","research":"","str1":"定番1","str2":"eert","str3":"155/65R13","price":"","note":""},{"title":"DU","name":"","research":"","str1":"定番2","str2":"ffty","str3":"195/65R15","price":"","note":""},{"title":"DU","name":"","research":"","str1":"定番2","str2":"ffty","str3":"155/65R14","price":"","note":""},{"title":"DU","name":"","research":"","str1":"ミニバン","str2":"huy","str3":"195/65R15","price":"","note":""}]');
-info = new String('[{"title":"BS","name":"","isnew":"true","str1":"定番1","str2":"qw","str3":"195/65R15","price":"","note":""},{"title":"BS","name":"","isnew":"true","str1":"定番1","str2":"qw","str3":"175/65R14","price":"","note":""},{"title":"BS","name":"","isnew":"true","str1":"定番1","str2":"qw","str3":"155/65R14","price":"","note":""},{"title":"BS","name":"","isnew":"true","str1":"定番1","str2":"qw","str3":"155/65R13","price":"","note":""},{"title":"BS","name":"","isnew":"true","str1":"定番1","str2":"yyt","str3":"195/65R15","price":"","note":""},{"title":"BS","name":"","isnew":"true","str1":"定番2","str2":"we","str3":"195/65R15","price":"","note":""},{"title":"BS","name":"","isnew":"true","str1":"定番2","str2":"we","str3":"175/65R14","price":"","note":""},{"title":"BS","name":"","isnew":"true","str1":"定番2","str2":"we","str3":"155/65R14","price":"","note":""},{"title":"BS","name":"","isnew":"true","str1":"定番2","str2":"we","str3":"155/65R13","price":"","note":""},{"title":"BS","name":"","isnew":"true","str1":"ミニバン","str2":"er","str3":"205/60R16","price":"","note":""},{"title":"BS","name":"","isnew":"true","str1":"ミニバン","str2":"er","str3":"195/65R15","price":"","note":""},{"title":"BS","name":"","isnew":"true","str1":"ミニバン","str2":"yy","str3":"195/65R15","price":"","note":""},{"title":"YO","name":"","isnew":"true","str1":"定番1","str2":"yt","str3":"195/65R15","price":"","note":""},{"title":"YO","name":"","isnew":"true","str1":"定番1","str2":"yt","str3":"175/65R14","price":"","note":""},{"title":"YO","name":"","isnew":"true","str1":"定番2","str2":"rte","str3":"175/65R14","price":"","note":""},{"title":"YO","name":"","isnew":"true","str1":"ミニバン","str2":"ert","str3":"195/65R15","price":"","note":""},{"title":"DU","name":"","isnew":"true","str1":"定番1","str2":"eert","str3":"195/65R15","price":"","note":""},{"title":"DU","name":"","isnew":"true","str1":"定番1","str2":"eert","str3":"155/65R13","price":"","note":""},{"title":"DU","name":"","isnew":"true","str1":"定番2","str2":"ffty","str3":"195/65R15","price":"","note":""},{"title":"DU","name":"","isnew":"true","str1":"定番2","str2":"ffty","str3":"155/65R14","price":"","note":""},{"title":"DU","name":"","isnew":"true","str1":"ミニバン","str2":"huy","str3":"195/65R15","price":"","note":""}]');
+info = new String('[{"title":"YO","name":"0000000122","isnew":"false","str1":"定番1","str2":"yt","str3":"195/65R15","price":"45","note":"null"},{"title":"YO","name":"0000000123","isnew":"false","str1":"定番1","str2":"yt","str3":"175/65R14","price":"54","note":"null"},{"title":"YO","name":"0000000124","isnew":"false","str1":"定番2","str2":"rte","str3":"175/65R14","price":"45","note":"null"},{"title":"YO","name":"0000000125","isnew":"false","str1":"ミニバン","str2":"ert","str3":"195/65R15","price":"4","note":"null"},{"title":"DU","name":"0000000126","isnew":"false","str1":"定番1","str2":"eert","str3":"195/65R15","price":"45","note":"null"},{"title":"DU","name":"0000000127","isnew":"false","str1":"定番1","str2":"eert","str3":"155/65R13","price":"4","note":"null"},{"title":"DU","name":"0000000128","isnew":"false","str1":"定番2","str2":"ffty","str3":"195/65R15","price":"45","note":"null"},{"title":"DU","name":"0000000129","isnew":"false","str1":"定番2","str2":"ffty","str3":"155/65R14","price":"54","note":"null"},{"title":"DU","name":"0000000130","isnew":"false","str1":"ミニバン","str2":"huy","str3":"195/65R15","price":"45","note":"null"},{"title":"BS","name":"0000000110","isnew":"false","str1":"定番1","str2":"qw","str3":"195/65R15","price":"12","note":"null"},{"title":"BS","name":"0000000111","isnew":"false","str1":"定番1","str2":"qw","str3":"175/65R14","price":"12","note":"null"},{"title":"BS","name":"0000000112","isnew":"false","str1":"定番1","str2":"qw","str3":"155/65R14","price":"12","note":"null"},{"title":"BS","name":"0000000113","isnew":"false","str1":"定番1","str2":"qw","str3":"155/65R13","price":"12","note":"null"},{"title":"BS","name":"0000000114","isnew":"false","str1":"定番1","str2":"yyt","str3":"195/65R15","price":"12","note":"null"},{"title":"BS","name":"0000000115","isnew":"false","str1":"定番2","str2":"we","str3":"195/65R15","price":"12","note":"null"},{"title":"BS","name":"0000000116","isnew":"false","str1":"定番2","str2":"we","str3":"175/65R14","price":"12","note":"null"},{"title":"BS","name":"0000000117","isnew":"false","str1":"定番2","str2":"we","str3":"155/65R14","price":"12","note":"null"},{"title":"BS","name":"0000000118","isnew":"false","str1":"定番2","str2":"we","str3":"155/65R13","price":"2","note":"null"},{"title":"BS","name":"0000000119","isnew":"false","str1":"ミニバン","str2":"er","str3":"205/60R16","price":"2","note":"null"},{"title":"BS","name":"0000000120","isnew":"false","str1":"ミニバン","str2":"er","str3":"195/65R15","price":"2","note":"null"},{"title":"BS","name":"0000000121","isnew":"false","str1":"ミニバン","str2":"yy","str3":"195/65R15","price":"12","note":"null"}]');
 
 
-DataJSON = new String(info);
-DataObj = paserJSONtoDF(DataJSON);
+stw = new String('[{"title":"BS","name":"","research":"","str1":"定番1","str2":"Newsite","str3":"195/65R15","price":"1000000","note":"good","isnew":"true"}]');
 $(document).ready(function() {
 
 	/*alert('[{"title":"BS","str1":"ミニバン","str2":"er","str3":"195/65R15"},{"title":"BS","str1":"ミニバン","str2":"er","str3":"205/60R16"}]')；
 	 */
+
+	DataJSON = new String(info);
+	DataObj = paserJSONtoDF(DataJSON);
+	backs = JSON.parse('[]');
 	draw(DataObj, "title");
+
+	$("#cre").click(function(event) {
+		doDataCol();
+
+	});
+	var tdd = $(".editNew");
+	tdd.click(newClick);
 
 	$("#sel").change(function(event) {
 		console.log("loading is ready");
@@ -19,9 +29,11 @@ $(document).ready(function() {
 		//给所有td节点添加点击事件  
 		tds.click(tdclick);
 	});
+
 	var tds = $(".editable");
 	//给所有td节点添加点击事件  
 	tds.click(tdclick);
+	drawNewByStr(stw);
 });
 
 
@@ -41,28 +53,33 @@ function sortPrice(a, b) {
 
 
 function paserJSONtoDF(str) {
-	bindID = 0;
-	var pjStr = JSON.parse(str);
-	pjStr.sort(sortPrice);
 	var JSONStr = JSON.parse('[]');
-	for (var tem in pjStr) {
-		var i = JSONStr.length - 1;
-		for (; i >= 0; i--) {
-			if (JSONStr[i].title == pjStr[tem].title && JSONStr[i].df == pjStr[tem].str1 && JSONStr[i].name == pjStr[tem].str2) {
-				var sts = new String('{"type":"' + pjStr[tem].str3 + '","id":"' + pjStr[tem].name + '","price":"' + pjStr[tem].price + '","comment":"' + pjStr[tem].note + '","isnew":"' + pjStr[tem].isnew + '","bindID":"' + bindID + '"}');
+	if (str != "]") {
+		bindID = 0;
+		var pjStr = JSON.parse(str);
+		// pjStr.sort(sortPrice);
+
+		for (var tem in pjStr) {
+			var i = JSONStr.length - 1;
+			for (; i >= 0; i--) {
+				if (JSONStr[i].title == pjStr[tem].title && JSONStr[i].df == pjStr[tem].str1 && JSONStr[i].name == pjStr[tem].str2) {
+					var sts = new String('{"type":"' + pjStr[tem].str3 + '","id":"' + pjStr[tem].name + '","price":"' + pjStr[tem].price + '","comment":"' + pjStr[tem].note + '","isnew":"' + pjStr[tem].isnew + '","bindID":"' + bindID + '"}');
+					bindID = bindID + 1;
+					var JSONTem = JSON.parse(sts);
+					JSONStr[i].detail.push(JSONTem);
+					break;
+				}
+			};
+
+			if (i < 0) {
+				var strTem = JSON.parse('{"title":"' + pjStr[tem].title + '","df":"' + pjStr[tem].str1 + '","name":"' + pjStr[tem].str2 + '","detail":[{"type":"' + pjStr[tem].str3 + '","id":"' + pjStr[tem].name + '","price":"' + pjStr[tem].price + '","comment":"' + pjStr[tem].note + '","isnew":"' + pjStr[tem].isnew + '","bindID":"' + (bindID) + '"}]}');
 				bindID = bindID + 1;
-				var JSONTem = JSON.parse(sts);
-				JSONStr[i].detail.push(JSONTem);
-				break;
-			}
+				JSONStr.push(strTem);
+			};
 		};
 
-		if (i < 0) {
-			var strTem = JSON.parse('{"title":"' + pjStr[tem].title + '","df":"' + pjStr[tem].str1 + '","name":"' + pjStr[tem].str2 + '","detail":[{"type":"' + pjStr[tem].str3 + '","id":"' + pjStr[tem].name + '","price":"' + pjStr[tem].price + '","comment":"' + pjStr[tem].note + '","isnew":"'+pjStr[tem].isnew+'","bindID":"' + (bindID) + '"}]}');
-			bindID = bindID + 1;
-			JSONStr.push(strTem);
-		};
-	};
+	}
+
 
 	return JSONStr;
 }
@@ -94,6 +111,7 @@ function paserJSONtoStr(JSONObj) {
 
 
 function draw(JSONStr, what) {
+	$("#draw").children().remove();
 	if (what) {
 		if (what == "title") {
 			drawTableByTitle(JSONStr);
@@ -105,12 +123,17 @@ function draw(JSONStr, what) {
 			drawTableByType(JSONStr);
 			console.log("****drawByType****");
 		} else {
+
 			console.log("Error Input : What in draw");
 		};
 	}
+
+
 }
 
 function drawTableByType(JSONStr) {
+	var JSONTEMP = JSONStr;
+	JSONTEMP.sort(sortPrice);
 	var item = $('<div class="item"></div>');
 	var head = $('<div id="" class="head"><span>サイズ</span></div>');
 	var table = $('<table border="2px"></table>');
@@ -119,9 +142,9 @@ function drawTableByType(JSONStr) {
 	console.log('*********************');
 
 	var list = new Array();
-	for (var i = 0; i < JSONStr.length; i++) {
-		for (var j = 0; j < JSONStr[i].detail.length; j++) {
-			var tem = JSONStr[i].detail[j];
+	for (var i = 0; i < JSONTEMP.length; i++) {
+		for (var j = 0; j < JSONTEMP[i].detail.length; j++) {
+			var tem = JSONTEMP[i].detail[j];
 
 			var k = 0;
 			for (; k < list.length; k++) {
@@ -133,7 +156,7 @@ function drawTableByType(JSONStr) {
 			if (k == list.length) {
 				//new and init
 				var group = $('<tbody id="' + tem.type + '"></tbody>');
-				var tr = $('<tr id="' + tem.bindID + '"> <td>' + tem.type + '</td>  <td>' + JSONStr[i].title + '</td>  <td>' + JSONStr[i].name + '</td>  <td class="editable">' + tem.price + '</td>  <td class="editable">' + tem.comment + '</td> </tr>');
+				var tr = $('<tr id="' + tem.bindID + '"> <td>' + tem.type + '</td>  <td>' + JSONTEMP[i].title + '</td>  <td>' + JSONTEMP[i].name + '</td>  <td class="editable">' + tem.price + '</td>  <td class="editable">' + tem.comment + '</td> </tr>');
 				$(group).append(tr);
 
 				list.push(group);
@@ -141,12 +164,12 @@ function drawTableByType(JSONStr) {
 				//new
 				var flag = true;
 				$(list[k]).children('tr').children('td:nth-child(2)').each(function(index, el) {
-					if ($(el).html() == JSONStr[i].title) {
+					if ($(el).html() == JSONTEMP[i].title) {
 						flag = false;
 						return;
 					}
 				});
-				var tr = $('<tr id="' + tem.bindID + '" > <td class="hide">' + tem.type + '</td>  <td class="' + (!flag ? "" : "hide") + '">' + JSONStr[i].title + '</td>  <td>' + JSONStr[i].name + '</td>  <td class="editable">' + tem.price + '</td>  <td class="editable">' + tem.comment + '</td> </tr>');
+				var tr = $('<tr id="' + tem.bindID + '" > <td class="hide">' + tem.type + '</td>  <td class="' + (!flag ? "" : "hide") + '">' + JSONTEMP[i].title + '</td>  <td>' + JSONTEMP[i].name + '</td>  <td class="editable">' + tem.price + '</td>  <td class="editable">' + tem.comment + '</td> </tr>');
 				$(list[k]).append(tr);
 
 			}
@@ -264,6 +287,32 @@ function bindData(JSONBind) {
 
 }
 
-function drawNew(){
+function drawNew(tem) {
+	for (var i = 0; i < tem.length; i++) {
+		var newTr = $("<tr id='" + tem[i].bindID + "' ><td class='editNew'>" + tem[i].title + "</td><td class='editNew'>" + tem[i].str1 + "</td><td class='editNew'>" + tem[i].str2 + "</td><td class='editNew'>" + tem[i].str3 + "</td> <td class='editNew'>" + tem[i].price + "</td> <td class='editNew'>" + tem[i].note + "</td></tr>");
+		
+		$("#newDraw").children('tbody').append($(newTr));
+	};
+	var tdd = $(".editNew");
+	tdd.click(newClick);
+
+}
+
+function drawNewByStr(str) {
+	if (str != "]") {
+		var JSONNew = JSON.parse(str);
+		var bindID = $("#newDraw tr:last").attr("id");
+		if (!bindID) {
+			bindID = 0;
+		};
+		for (var t in JSONNew) {
+			bindID = bindID -1;
+			var sts = new String('{"title":"' + JSONNew[t].title + '","name":"","research":"","str1":"' + JSONNew[t].str1 + '","str2":"' + JSONNew[t].str2 + '","str3":"' + JSONNew[t].str3 + '","price":"' + JSONNew[t].price + '","note":"' + JSONNew[t].note + '","isnew":"true","bindID":"' + bindID + '"}');
+			backs.push(JSON.parse(sts));
+		}
+		drawNew(backs);
+	} else {
+		$("#newDraw").children().children("tr:gt(1)").remove();
+	}
 
 }
