@@ -224,3 +224,17 @@ storeInfo = [
     ]
   }
 ]
+
+
+{
+  "title": "BS",
+  "name": "",
+  "research": "",
+  "str1": "定番1",
+  "str2": "Newsite",
+  "str3": "195/65R15",
+  "price": "1000000",
+  "note": "good",
+  "isnew": "true",
+  "bindID": "-1"
+}
