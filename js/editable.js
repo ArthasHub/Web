@@ -108,3 +108,4 @@ function newClick() {
 	//6 需要清除td上的点击事件  
 	td.unbind("click");
 }
+

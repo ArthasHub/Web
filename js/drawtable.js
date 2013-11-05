@@ -95,13 +95,19 @@ function draw(JSONStr, what) {
 
 }
 
+
+
 function drawTableByType(JSONStr) {
-	var JSONTEMP = JSONStr.clone(true, true);
-	//JSONTEMP.sort(sortPrice);
-	var item = $('<div class="item"></div>');
-	var head = $('<div id="" class="head"><span>サイズ</span></div>');
-	var table = $('<table border="2px"></table>');
+	var JSONTEMP = JSONStr.slice(0);
+	// JSONTEMP.sort(sortPrice);
+
+
+
+	var item = $('<div ></div>');
+	var head = $('<div id="" class="item"><span>サイズ</span></div>');
+	var table = $('<table class="dataTable" border="2px;"></table>');
 	var th = $('<thead><tr> <td>タイヤサイズ</td>  <td>メーカー名</td>  <td>ブランド名</td>  <td>販売価格（4本税込）</td>  <td>備考</td> </tr></thead>');
+	//var th = $('<thead><tr> <td>{!$Label.column3}</td>  <td>{!$Label.column1}</td>  <td>{!$Label.column2}</td>  <td>{!$Label.column4}</td>  <td>{!$Label.column5}</td> </tr></thead>');
 	var tb = $('<tbody></tbody>');
 	console.log('*********************');
 
@@ -130,9 +136,12 @@ function drawTableByType(JSONStr) {
 				$(list[k]).children('tr').children('td:nth-child(2)').each(function(index, el) {
 					if ($(el).html() == JSONTEMP[i].title) {
 						flag = false;
-						return;
+						return flag;
 					}
 				});
+				//是本MAKER的第一行，flag = true；
+				//不是本MAKER的第一行 flag = false;
+				$(list[k]).children('tr').
 				var tr = $('<tr id="' + tem.bindID + '" > <td >&nbsp;</td>  <td>' + (flag ? JSONTEMP[i].title : "&nbsp;") + '</td>  <td>' + JSONTEMP[i].name + '</td>  <td class="editable">' + tem.price + '</td>  <td class="editable">' + tem.comment + '</td> </tr>');
 				$(list[k]).append(tr);
 
@@ -254,7 +263,7 @@ function bindData(JSONBind) {
 function drawNew(tem) {
 	for (var i = 0; i < tem.length; i++) {
 		var newTr = $("<tr id='" + tem[i].bindID + "' ><td class='editNew'>" + tem[i].title + "</td><td class='editNew'>" + tem[i].str1 + "</td><td class='editNew'>" + tem[i].str2 + "</td><td class='editNew'>" + tem[i].str3 + "</td> <td class='editNew'>" + tem[i].price + "</td> <td class='editNew'>" + tem[i].note + "</td></tr>");
-		
+
 		$("#newDraw").children('tbody').append($(newTr));
 	};
 	var tdd = $(".editNew");
@@ -272,7 +281,7 @@ function drawNewByStr(str) {
 			bindID = 0;
 		};
 		for (var t in JSONNew) {
-			bindID = bindID -1;
+			bindID = bindID - 1;
 			var sts = new String('{"title":"' + JSONNew[t].title + '","name":"","research":"","str1":"' + JSONNew[t].str1 + '","str2":"' + JSONNew[t].str2 + '","str3":"' + JSONNew[t].str3 + '","price":"' + JSONNew[t].price + '","note":"' + JSONNew[t].note + '","isnew":"true","bindID":"' + bindID + '"}');
 			backs.push(JSON.parse(sts));
 		}
@@ -282,7 +291,8 @@ function drawNewByStr(str) {
 	}
 
 }
-function sortByType(a,b){
+
+function sortByType(a, b) {
 	var at = $(a).children('tr:eq(0)').children('td:eq(0)').text();
 	var bt = $(b).children('tr:eq(0)').children('td:eq(0)').text();
 	if (at < bt) {
@@ -294,4 +304,15 @@ function sortByType(a,b){
 			return -1;
 		}
 	}
+}
+
+function sortByName(list) {
+	for (var i = 0; i < list.length; i++) {
+		var TypeTem = $(list[i]).children('tr:eq(0)').children('td:eq(0)').text();
+		var NameTem = $(list[i]).children('tr:eq(0)').children('td:eq(1)').text();
+		$(list[i]).children('tr:eq(0)').children('td:lt(2)').text("");
+		$(list[i]).children('tr').each(function(index, el) {
+
+		});
+	};
 }
