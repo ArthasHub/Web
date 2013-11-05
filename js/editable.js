@@ -58,6 +58,7 @@ anotherInfo = '[{"title":"YO","name":"0000000122","isnew":"true","str1":"定番1
 newObj = JSON.parse(new String(anotherInfo));
 
 function newClick() {
+
 	//0 保存当前td节点  
 	var td = $(this);
 	//1 取出当前td的文本内容保存起来  
@@ -94,11 +95,9 @@ function newClick() {
 				var note = tdNode.parent('tr').children('td:eq(5)').html();
 				var str = new String('{"title":"' + title + '","name":"","research":"","str1":"' + str1 + '","str2":"' + str2 + '","str3":"' + str3 + '","price":"' + price + '","note":"' + note + '","isnew":"true","bindID":"'+bindID+'"}');
 				backs[i] = JSON.parse(str);
+				break;
 			};
 		};
-
-
-
 	});
 	//5 将文本内容加入td  
 	td.append(input); //也可input.appendto(td)  

@@ -1,40 +1,4 @@
 // DataJSON = new String('[{"title":"BS","name":"","research":"","str1":"定番1","str2":"qw","str3":"195/65R15","price":"","note":""},{"title":"BS","name":"","research":"","str1":"定番1","str2":"qw","str3":"175/65R14","price":"","note":""},{"title":"BS","name":"","research":"","str1":"定番1","str2":"qw","str3":"155/65R14","price":"","note":""},{"title":"BS","name":"","research":"","str1":"定番1","str2":"qw","str3":"155/65R13","price":"","note":""},{"title":"BS","name":"","research":"","str1":"定番2","str2":"we","str3":"195/65R15","price":"","note":""},{"title":"BS","name":"","research":"","str1":"定番2","str2":"we","str3":"175/65R14","price":"","note":""},{"title":"BS","name":"","research":"","str1":"定番2","str2":"we","str3":"155/65R14","price":"","note":""},{"title":"BS","name":"","research":"","str1":"定番2","str2":"we","str3":"155/65R13","price":"","note":""},{"title":"BS","name":"","research":"","str1":"ミニバン","str2":"er","str3":"205/60R16","price":"","note":""},{"title":"BS","name":"","research":"","str1":"ミニバン","str2":"er","str3":"195/65R15","price":"","note":""},{"title":"YO","name":"","research":"","str1":"定番1","str2":"yt","str3":"195/65R15","price":"","note":""},{"title":"YO","name":"","research":"","str1":"定番2","str2":"rte","str3":"175/65R14","price":"","note":""},{"title":"YO","name":"","research":"","str1":"ミニバン","str2":"ert","str3":"195/65R15","price":"","note":""},{"title":"DU","name":"","research":"","str1":"定番1","str2":"eert","str3":"195/65R15","price":"","note":""},{"title":"DU","name":"","research":"","str1":"定番1","str2":"eert","str3":"155/65R13","price":"","note":""},{"title":"DU","name":"","research":"","str1":"定番2","str2":"ffty","str3":"195/65R15","price":"","note":""},{"title":"DU","name":"","research":"","str1":"定番2","str2":"ffty","str3":"155/65R14","price":"","note":""},{"title":"DU","name":"","research":"","str1":"ミニバン","str2":"huy","str3":"195/65R15","price":"","note":""}]');
-info = new String('[{"title":"YO","name":"0000000122","isnew":"false","str1":"定番1","str2":"yt","str3":"195/65R15","price":"45","note":"null"},{"title":"YO","name":"0000000123","isnew":"false","str1":"定番1","str2":"yt","str3":"175/65R14","price":"54","note":"null"},{"title":"YO","name":"0000000124","isnew":"false","str1":"定番2","str2":"rte","str3":"175/65R14","price":"45","note":"null"},{"title":"YO","name":"0000000125","isnew":"false","str1":"ミニバン","str2":"ert","str3":"195/65R15","price":"4","note":"null"},{"title":"DU","name":"0000000126","isnew":"false","str1":"定番1","str2":"eert","str3":"195/65R15","price":"45","note":"null"},{"title":"DU","name":"0000000127","isnew":"false","str1":"定番1","str2":"eert","str3":"155/65R13","price":"4","note":"null"},{"title":"DU","name":"0000000128","isnew":"false","str1":"定番2","str2":"ffty","str3":"195/65R15","price":"45","note":"null"},{"title":"DU","name":"0000000129","isnew":"false","str1":"定番2","str2":"ffty","str3":"155/65R14","price":"54","note":"null"},{"title":"DU","name":"0000000130","isnew":"false","str1":"ミニバン","str2":"huy","str3":"195/65R15","price":"45","note":"null"},{"title":"BS","name":"0000000110","isnew":"false","str1":"定番1","str2":"qw","str3":"195/65R15","price":"12","note":"null"},{"title":"BS","name":"0000000111","isnew":"false","str1":"定番1","str2":"qw","str3":"175/65R14","price":"12","note":"null"},{"title":"BS","name":"0000000112","isnew":"false","str1":"定番1","str2":"qw","str3":"155/65R14","price":"12","note":"null"},{"title":"BS","name":"0000000113","isnew":"false","str1":"定番1","str2":"qw","str3":"155/65R13","price":"12","note":"null"},{"title":"BS","name":"0000000114","isnew":"false","str1":"定番1","str2":"yyt","str3":"195/65R15","price":"12","note":"null"},{"title":"BS","name":"0000000115","isnew":"false","str1":"定番2","str2":"we","str3":"195/65R15","price":"12","note":"null"},{"title":"BS","name":"0000000116","isnew":"false","str1":"定番2","str2":"we","str3":"175/65R14","price":"12","note":"null"},{"title":"BS","name":"0000000117","isnew":"false","str1":"定番2","str2":"we","str3":"155/65R14","price":"12","note":"null"},{"title":"BS","name":"0000000118","isnew":"false","str1":"定番2","str2":"we","str3":"155/65R13","price":"2","note":"null"},{"title":"BS","name":"0000000119","isnew":"false","str1":"ミニバン","str2":"er","str3":"205/60R16","price":"2","note":"null"},{"title":"BS","name":"0000000120","isnew":"false","str1":"ミニバン","str2":"er","str3":"195/65R15","price":"2","note":"null"},{"title":"BS","name":"0000000121","isnew":"false","str1":"ミニバン","str2":"yy","str3":"195/65R15","price":"12","note":"null"}]');
-
-
-stw = new String('[{"title":"BS","name":"","research":"","str1":"定番1","str2":"Newsite","str3":"195/65R15","price":"1000000","note":"good","isnew":"true"}]');
-$(document).ready(function() {
-
-	/*alert('[{"title":"BS","str1":"ミニバン","str2":"er","str3":"195/65R15"},{"title":"BS","str1":"ミニバン","str2":"er","str3":"205/60R16"}]')；
-	 */
-
-	DataJSON = new String(info);
-	DataObj = paserJSONtoDF(DataJSON);
-	backs = JSON.parse('[]');
-	draw(DataObj, "title");
-
-	$("#cre").click(function(event) {
-		doDataCol();
-
-	});
-	var tdd = $(".editNew");
-	tdd.click(newClick);
-
-	$("#sel").change(function(event) {
-		console.log("loading is ready");
-		var what = $(this).val();
-		$("#draw").children().remove();
-		draw(DataObj, what);
-		var tds = $(".editable");
-		//给所有td节点添加点击事件  
-		tds.click(tdclick);
-	});
-
-	var tds = $(".editable");
-	//给所有td节点添加点击事件  
-	tds.click(tdclick);
-	drawNewByStr(stw);
-});
 
 
 
@@ -132,8 +96,8 @@ function draw(JSONStr, what) {
 }
 
 function drawTableByType(JSONStr) {
-	var JSONTEMP = JSONStr;
-	JSONTEMP.sort(sortPrice);
+	var JSONTEMP = JSONStr.clone(true, true);
+	//JSONTEMP.sort(sortPrice);
 	var item = $('<div class="item"></div>');
 	var head = $('<div id="" class="head"><span>サイズ</span></div>');
 	var table = $('<table border="2px"></table>');
@@ -169,7 +133,7 @@ function drawTableByType(JSONStr) {
 						return;
 					}
 				});
-				var tr = $('<tr id="' + tem.bindID + '" > <td class="hide">' + tem.type + '</td>  <td class="' + (!flag ? "" : "hide") + '">' + JSONTEMP[i].title + '</td>  <td>' + JSONTEMP[i].name + '</td>  <td class="editable">' + tem.price + '</td>  <td class="editable">' + tem.comment + '</td> </tr>');
+				var tr = $('<tr id="' + tem.bindID + '" > <td >&nbsp;</td>  <td>' + (flag ? JSONTEMP[i].title : "&nbsp;") + '</td>  <td>' + JSONTEMP[i].name + '</td>  <td class="editable">' + tem.price + '</td>  <td class="editable">' + tem.comment + '</td> </tr>');
 				$(list[k]).append(tr);
 
 			}
@@ -220,7 +184,7 @@ function drawTableByTitle(JSONStr) {
 		var tds = $('<tr id="' + JSONStr[i].detail[0].bindID + '"> <td>' + JSONStr[i].df + '</td>  <td>' + JSONStr[i].name + '</td>  <td>' + JSONStr[i].detail[0].type + '</td>  <td class="editable">' + JSONStr[i].detail[0].price + '</td>  <td class="editable">' + JSONStr[i].detail[0].comment + '</td> </tr>');
 		$(items[j]).children('table').children('tbody').append(tds);
 		for (var k = 1; k < JSONStr[i].detail.length; k++) {
-			tds = $('<tr id="' + JSONStr[i].detail[k].bindID + '"> <td class="hide">' + JSONStr[i].df + '</td>  <td class="hide">' + JSONStr[i].name + '</td>  <td>' + JSONStr[i].detail[k].type + '</td>  <td class="editable">' + JSONStr[i].detail[k].price + '</td>  <td class="editable">' + JSONStr[i].detail[k].comment + '</td> </tr>');
+			tds = $('<tr id="' + JSONStr[i].detail[k].bindID + '"> <td> &nbsp;</td>  <td> &nbsp;</td>  <td>' + JSONStr[i].detail[k].type + '</td>  <td class="editable">' + JSONStr[i].detail[k].price + '</td>  <td class="editable">' + JSONStr[i].detail[k].comment + '</td> </tr>');
 			$(items[j]).children('table').children('tbody').append(tds);
 		};
 
@@ -263,7 +227,7 @@ function drawTableByDF(JSONStr) {
 		var tds = $('<tr id="' + JSONStr[i].detail[0].bindID + '"> <td>' + JSONStr[i].title + '</td>  <td>' + JSONStr[i].name + '</td>  <td>' + JSONStr[i].detail[0].type + '</td>  <td class="editable">' + JSONStr[i].detail[0].price + '</td>  <td class="editable">' + JSONStr[i].detail[0].comment + '</td> </tr>');
 		$(items[j]).children('table').children('tbody').append(tds);
 		for (var k = 1; k < JSONStr[i].detail.length; k++) {
-			tds = $('<tr id="' + JSONStr[i].detail[k].bindID + '"> <td class="hide">' + JSONStr[i].title + '</td>  <td class="hide">' + JSONStr[i].name + '</td>  <td>' + JSONStr[i].detail[k].type + '</td>  <td class="editable">' + JSONStr[i].detail[k].price + '</td>  <td class="editable">' + JSONStr[i].detail[k].comment + '</td> </tr>');
+			tds = $('<tr id="' + JSONStr[i].detail[k].bindID + '"> <td >&nbsp;</td>  <td >&nbsp;</td>  <td>' + JSONStr[i].detail[k].type + '</td>  <td class="editable">' + JSONStr[i].detail[k].price + '</td>  <td class="editable">' + JSONStr[i].detail[k].comment + '</td> </tr>');
 			$(items[j]).children('table').children('tbody').append(tds);
 		};
 
@@ -300,6 +264,7 @@ function drawNew(tem) {
 }
 
 function drawNewByStr(str) {
+	$("#newDraw").children().children("tr:gt(1)").remove();
 	if (str != "]") {
 		var JSONNew = JSON.parse(str);
 		var bindID = $("#newDraw tr:last").attr("id");

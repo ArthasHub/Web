@@ -1,11 +1,11 @@
 <html>
 <head>
-		<title>OffLine Demo</title>
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<!-- Bootstrap CSS -->
-		
-	</head>
+	<title>OffLine Demo</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- Bootstrap CSS -->
+
+</head>
 	<style type="text/css">
 		td { 
 			width: 20%;
@@ -37,38 +37,29 @@
 		}
 
 	</style>
-	<body>
-		
-		<table class="" border="2px" >
-			<thead>
-				<tr>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<td class="editable" width="100px"><span>我了个去</span></td><td class="editable" width="100px"><span>我了个去</span></td>
-				</tr>
-			
-				
-			</tbody>
-		</table>
-		<div id="draw"></div>
-		<a href="javascript:alert(data())" >我要飞</a>		
-		<!-- 存储 js-->
-		<!-- Latest compiled and minified JS -->
-
-		<script src="/Web/js/jquery.js"></script>
-		
-
-
-	<script src="/Web/js/drawtable.js"></script>
-		<script src="/Web/js/editable.js"></script>
-
+<body>
 	
-		<script type="text/javascript" src="/Web/js/data.js"></script>
-	
+	<table class="" border="2px" >
+		<thead>
+			<tr></tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td class="editable" width="100px">
+					<span>我了个去</span>
+				</td>
+				<td class="editable" width="100px">
+					<span>我了个去</span>
+				</td>
+			</tr>
 
-	
+		</tbody>
+	</table>
+	<div id="draw"></div>
+	<a href="javascript:alert(data())" >我要飞</a>
+	<!-- 存储 js-->
+	<!-- Latest compiled and minified JS -->
+
 	<select name="" id="sel">
 		<option value="title"  selected="true" >title</option>
 		<option value="df" >df</option>
@@ -78,45 +69,57 @@
 	<input type="button" id="cre" value="添加数据"/>
 
 	<table id="newDraw" style="border: solid thin black;width:800px">
-         <tr style="background-color: lightgray">
-            <td>
-            <font color="red">メーカー名</font>
-            </td>
-            <td>
-            タイプ
+		<tr style="background-color: lightgray">
+			<td> <font color="red">メーカー名</font>
+			</td>
+			<td>タイプ</td>
+			<td> <font color="red">ブランド</font>
 
-            </td>
-            <td>
-            <font color="red">ブランド</font>
+			</td>
+			<td>
+				<font color="red">サイズ</font>
 
-            </td>
-            <td>
-            <font color="red">サイズ</font>
+			</td>
+			<td>
+				<font color="red">価格（4本税込）</font>
 
-            </td>
-            <td>
-           <font color="red"> 価格（4本税込）</font>
+			</td>
+			<td>備考</td>
+		</tr>
+		<tr>
+			<td>
+				<input id="ipt1" width="130px"  type="text" value="必須" onfocus="if(this.value==defaultValue){this.value='';this.className='black'}"
+                                onblur="if(!value){this.value=defaultValue;this.className='gray'}"/>
+			</td>
+			<td>
+				<input id="ipt2" width="130px" type="text" />
+			</td>
+			<td>
+				<input id="ipt3" width="130px" type="text" value="必須" onfocus="if(this.value==defaultValue){this.value='';this.className='black'}"
+                                onblur="if(!value){this.value=defaultValue;this.className='gray'}"/>
+			</td>
+			<td>
+				<input id="ipt4" width="130px" type="text" value="必須" onfocus="if(this.value==defaultValue){this.value='';this.className='black'}"
+                                onblur="if(!value){this.value=defaultValue;this.className='gray'}"/>
+			</td>
+			<td>
+				<input id="ipt5" width="130px" type="text" value="必須" onfocus="if(this.value==defaultValue){this.value='';this.className='black'}"
+                                onblur="if(!value){this.value=defaultValue;this.className='gray'}"/>
+			</td>
+			<td>
+				<input id="ipt6" width="130px" type="text"/>
+			</td>
+		</tr>
+	</table>
 
-            </td>
-            <td>
-            備考
+	<div id="te"></div>
+	<script src="/Web/js/jquery.js"></script>
 
-            </td>          
-         </tr>
-         <tr>
-           <td><input id="ipt1" width="130px"  type="text" value="必須" onfocus="if(this.value==defaultValue){this.value='';this.className='black'}"
-                                onblur="if(!value){this.value=defaultValue;this.className='gray'}"/></td>
-           <td><input id="ipt2" width="130px" type="text" /></td>
-           <td> <input id="ipt3" width="130px" type="text" value="必須" onfocus="if(this.value==defaultValue){this.value='';this.className='black'}"
-                                onblur="if(!value){this.value=defaultValue;this.className='gray'}"/></td>
-           <td> <input id="ipt4" width="130px" type="text" value="必須" onfocus="if(this.value==defaultValue){this.value='';this.className='black'}"
-                                onblur="if(!value){this.value=defaultValue;this.className='gray'}"/></td>
-           <td> <input id="ipt5" width="130px" type="text" value="必須" onfocus="if(this.value==defaultValue){this.value='';this.className='black'}"
-                                onblur="if(!value){this.value=defaultValue;this.className='gray'}"/></td>
-           <td> <input id="ipt6" width="130px" type="text"/></td>          
-         </tr>
-      </table>
-	
+	<script src="/Web/js/drawtable.js"></script>
+	<script src="/Web/js/editable.js"></script>
 
-	</body>
+	<script type="text/javascript" src="/Web/js/data.js"></script>
+	<script type="text/javascript" src="/Web/js/init.js"></script>
+
+</body>
 </html>
