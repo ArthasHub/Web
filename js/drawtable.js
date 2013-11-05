@@ -176,7 +176,7 @@ function drawTableByType(JSONStr) {
 
 		};
 	};
-
+	list.sort(sortByType);
 	$(list).each(function(index, el) {
 		$(tb).append($(el).children('tr'));
 	});
@@ -294,6 +294,7 @@ function drawNew(tem) {
 		$("#newDraw").children('tbody').append($(newTr));
 	};
 	var tdd = $(".editNew");
+	tdd.unbind("click");
 	tdd.click(newClick);
 
 }
@@ -315,4 +316,17 @@ function drawNewByStr(str) {
 		$("#newDraw").children().children("tr:gt(1)").remove();
 	}
 
+}
+function sortByType(a,b){
+	var at = $(a).children('tr:eq(0)').children('td:eq(0)').text();
+	var bt = $(b).children('tr:eq(0)').children('td:eq(0)').text();
+	if (at < bt) {
+		return 1
+	} else {
+		if (at == bt) {
+			return 0;
+		} else {
+			return -1;
+		}
+	}
 }

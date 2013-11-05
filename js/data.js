@@ -40,6 +40,7 @@ function dataCol() {
 	if (title + str1 + str2 + str3 + price + note != "") {
 		for (; i < backs.length; i++) {
 			if (title == backs[i].title && str1 == backs[i].str1 && str2 == backs[i].str2 && str3 == backs[i].str3) {
+				
 				console.log("input error: data has existed");
 				break;
 			}
