@@ -306,13 +306,3 @@ function sortByType(a, b) {
 	}
 }
 
-function sortByName(list) {
-	for (var i = 0; i < list.length; i++) {
-		var TypeTem = $(list[i]).children('tr:eq(0)').children('td:eq(0)').text();
-		var NameTem = $(list[i]).children('tr:eq(0)').children('td:eq(1)').text();
-		$(list[i]).children('tr:eq(0)').children('td:lt(2)').text("");
-		$(list[i]).children('tr').each(function(index, el) {
-
-		});
-	};
-}
