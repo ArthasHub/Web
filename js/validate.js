@@ -20,7 +20,7 @@ function ValidateLS(LSStr,NewStr){
 		};
 	};
 	if (i == LSObj.length) {
-		LSObj.concat(NewObj);
+		LSObj.push(NewObj);
 	};
 	return JSON.stringify(LSObj);
 }
