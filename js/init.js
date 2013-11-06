@@ -1,7 +1,7 @@
 info = new String('[{"title":"BS","name":"null","isnew":"false","str1":"定番1","str2":"qw","str3":"195/65R15","price":"","note":""},{"title":"BS","name":"null","isnew":"false","str1":"定番1","str2":"qw","str3":"175/65R14","price":"","note":""},{"title":"BS","name":"null","isnew":"false","str1":"定番1","str2":"qw","str3":"155/65R14","price":"","note":""},{"title":"BS","name":"null","isnew":"false","str1":"定番1","str2":"qw","str3":"155/65R13","price":"","note":""},{"title":"BS","name":"null","isnew":"false","str1":"定番1","str2":"yyt","str3":"195/65R15","price":"","note":""},{"title":"BS","name":"null","isnew":"false","str1":"定番2","str2":"we","str3":"195/65R15","price":"","note":""},{"title":"BS","name":"null","isnew":"false","str1":"定番2","str2":"we","str3":"175/65R14","price":"","note":""},{"title":"BS","name":"null","isnew":"false","str1":"定番2","str2":"we","str3":"155/65R14","price":"","note":""},{"title":"BS","name":"null","isnew":"false","str1":"定番2","str2":"we","str3":"155/65R13","price":"","note":""},{"title":"BS","name":"null","isnew":"false","str1":"ミニバン","str2":"er","str3":"205/60R16","price":"","note":""},{"title":"BS","name":"null","isnew":"false","str1":"ミニバン","str2":"er","str3":"195/65R15","price":"","note":""},{"title":"BS","name":"null","isnew":"false","str1":"ミニバン","str2":"yy","str3":"195/65R15","price":"","note":""},{"title":"DU","name":"null","isnew":"false","str1":"定番1","str2":"eert","str3":"195/65R15","price":"","note":""},{"title":"DU","name":"null","isnew":"false","str1":"定番1","str2":"eert","str3":"155/65R13","price":"","note":""},{"title":"DU","name":"null","isnew":"false","str1":"定番2","str2":"ffty","str3":"195/65R15","price":"","note":""},{"title":"DU","name":"null","isnew":"false","str1":"定番2","str2":"ffty","str3":"155/65R14","price":"","note":""},{"title":"DU","name":"null","isnew":"false","str1":"ミニバン","str2":"huy","str3":"195/65R15","price":"","note":""},{"title":"YO","name":"null","isnew":"false","str1":"定番1","str2":"yt","str3":"195/65R15","price":"","note":""},{"title":"YO","name":"null","isnew":"false","str1":"定番1","str2":"yt","str3":"175/65R14","price":"","note":""},{"title":"YO","name":"null","isnew":"false","str1":"定番2","str2":"rte","str3":"175/65R14","price":"","note":""},{"title":"YO","name":"null","isnew":"false","str1":"ミニバン","str2":"ert","str3":"195/65R15","price":"","note":""}]');
 
 
-stw = new String('[{"title":"BS","name":"","research":"","str1":"定番1","str2":"Newsite","str3":"195/65R15","price":"1000000","note":"good","isnew":"true"}]');
+stw = new String('[{"title":"BS","name":"","research":"","str1":"定番1","str2":"Newsite","str3":"195/65R15","price":"1000","note":"good","isnew":"true"}]');
 $(document).ready(function() {
 
 	/*alert('[{"title":"BS","str1":"ミニバン","str2":"er","str3":"195/65R15"},{"title":"BS","str1":"ミニバン","str2":"er","str3":"205/60R16"}]')；
@@ -15,11 +15,8 @@ function init(info,noinfo){
 	DataObj = paserJSONtoDF(DataJSON);
 	backs = JSON.parse('[]');
 	draw(DataObj, "title");
-
-	$("#cre").click(function(event) {
-		doDataCol();
-
-	});
+	$("#cre").unbind('click');
+	$("#cre").click(bindCre);
 	drawNewByStr(noinfo);
 	
 
@@ -37,4 +34,9 @@ function init(info,noinfo){
 	//给所有td节点添加点击事件  
 	tds.click(tdclick);
 	
+}
+function bindCre(event){
+	$("#cre").unbind('click');
+	doDataCol();
+	$("#cre").bind('click',bindCre);
 }

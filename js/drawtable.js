@@ -141,7 +141,7 @@ function drawTableByType(JSONStr) {
 				});
 				//是本MAKER的第一行，flag = true；
 				//不是本MAKER的第一行 flag = false;
-				$(list[k]).children('tr').
+				
 				var tr = $('<tr id="' + tem.bindID + '" > <td >&nbsp;</td>  <td>' + (flag ? JSONTEMP[i].title : "&nbsp;") + '</td>  <td>' + JSONTEMP[i].name + '</td>  <td class="editable">' + tem.price + '</td>  <td class="editable">' + tem.comment + '</td> </tr>');
 				$(list[k]).append(tr);
 
@@ -282,7 +282,7 @@ function drawNewByStr(str) {
 		};
 		for (var t in JSONNew) {
 			bindID = bindID - 1;
-			var sts = new String('{"title":"' + JSONNew[t].title + '","name":"","research":"","str1":"' + JSONNew[t].str1 + '","str2":"' + JSONNew[t].str2 + '","str3":"' + JSONNew[t].str3 + '","price":"' + JSONNew[t].price + '","note":"' + JSONNew[t].note + '","isnew":"true","bindID":"' + bindID + '"}');
+			var sts = new String('{"title":"' + JSONNew[t].title + '","name":"' + JSONNew[t].name + '","research":"","str1":"' + JSONNew[t].str1 + '","str2":"' + JSONNew[t].str2 + '","str3":"' + JSONNew[t].str3 + '","price":"' + JSONNew[t].price + '","note":"' + JSONNew[t].note + '","isnew":"true","bindID":"' + bindID + '"}');
 			backs.push(JSON.parse(sts));
 		}
 		drawNew(backs);
