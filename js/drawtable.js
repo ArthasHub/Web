@@ -57,7 +57,7 @@ function paserJSONtoDF(str) {
 	if (str != "]") {
 		bindID = 0;
 		var pjStr = JSON.parse(str);
-		// pjStr.sort(sortPrice);
+		//pjStr.sort(sortPrice);
 
 		for (var tem in pjStr) {
 			var i = JSONStr.length - 1;
@@ -133,7 +133,7 @@ function draw(JSONStr, what) {
 
 function drawTableByType(JSONStr) {
 	var JSONTEMP = JSONStr;
-	JSONTEMP.sort(sortPrice);
+
 	var item = $('<div class="item"></div>');
 	var head = $('<div id="" class="head"><span>サイズ</span></div>');
 	var table = $('<table border="2px"></table>');
@@ -158,7 +158,7 @@ function drawTableByType(JSONStr) {
 				var group = $('<tbody id="' + tem.type + '"></tbody>');
 				var tr = $('<tr id="' + tem.bindID + '"> <td>' + tem.type + '</td>  <td>' + JSONTEMP[i].title + '</td>  <td>' + JSONTEMP[i].name + '</td>  <td class="editable">' + tem.price + '</td>  <td class="editable">' + tem.comment + '</td> </tr>');
 				$(group).append(tr);
-
+				
 				list.push(group);
 			} else {
 				//new
@@ -176,7 +176,7 @@ function drawTableByType(JSONStr) {
 
 		};
 	};
-
+	list.sort(sortByType);
 	$(list).each(function(index, el) {
 		$(tb).append($(el).children('tr'));
 	});
@@ -315,4 +315,17 @@ function drawNewByStr(str) {
 		$("#newDraw").children().children("tr:gt(1)").remove();
 	}
 
+}
+function sortByType(a,b){
+	var atem = $(a).children('tr:eq(0)').children('td:eq(0)').html();
+	var btem = $(b).children('tr:eq(0)').children('td:eq(0)').html();
+	if ( atem< btem) {
+		return 1
+	} else {
+		if (atem == btem) {
+			return 0;
+		} else {
+			return -1;
+		}
+	}
 }
