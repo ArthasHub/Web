@@ -98,13 +98,13 @@ function draw(JSONStr, what) {
 
 
 function drawTableByType(JSONStr) {
-<<<<<<< HEAD
+
 	var JSONTEMP = JSONStr;
 
 	var item = $('<div class="item"></div>');
 	var head = $('<div id="" class="head"><span>サイズ</span></div>');
 	var table = $('<table border="2px"></table>');
-=======
+
 	var JSONTEMP = JSONStr.slice(0);
 	// JSONTEMP.sort(sortPrice);
 
@@ -113,7 +113,7 @@ function drawTableByType(JSONStr) {
 	var item = $('<div ></div>');
 	var head = $('<div id="" class="item"><span>サイズ</span></div>');
 	var table = $('<table class="dataTable" border="2px;"></table>');
->>>>>>> BACK
+
 	var th = $('<thead><tr> <td>タイヤサイズ</td>  <td>メーカー名</td>  <td>ブランド名</td>  <td>販売価格（4本税込）</td>  <td>備考</td> </tr></thead>');
 	//var th = $('<thead><tr> <td>{!$Label.column3}</td>  <td>{!$Label.column1}</td>  <td>{!$Label.column2}</td>  <td>{!$Label.column4}</td>  <td>{!$Label.column5}</td> </tr></thead>');
 	var tb = $('<tbody></tbody>');
@@ -157,7 +157,6 @@ function drawTableByType(JSONStr) {
 
 		};
 	};
-	list.sort(sortByType);
 	$(list).each(function(index, el) {
 		$(tb).append($(el).children('tr'));
 	});
@@ -299,32 +298,3 @@ function drawNewByStr(str) {
 	}
 
 }
-<<<<<<< HEAD
-function sortByType(a,b){
-	var atem = $(a).children('tr:eq(0)').children('td:eq(0)').html();
-	var btem = $(b).children('tr:eq(0)').children('td:eq(0)').html();
-	if ( atem< btem) {
-		return 1
-	} else {
-		if (atem == btem) {
-=======
-
-function sortByType(a, b) {
-	var at = $(a).children('tr:eq(0)').children('td:eq(0)').text();
-	var bt = $(b).children('tr:eq(0)').children('td:eq(0)').text();
-	if (at < bt) {
-		return 1
-	} else {
-		if (at == bt) {
->>>>>>> BACK
-			return 0;
-		} else {
-			return -1;
-		}
-	}
-<<<<<<< HEAD
-}
-=======
-}
-
->>>>>>> BACK
