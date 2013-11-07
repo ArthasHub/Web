@@ -5,18 +5,92 @@
 	<title>Document</title>
 </head>
 <body>
-	
-	<script type="text/javascript" src="/Web/js/validate.js"></script>
-	<script type="text/javascript">
-		
-//[{"account":"aa","adate":"2013/12/12","pricedetail":[{"title":"BS","name":"","str1":"定番1","str2":"qw","str3":"105/65R15","str4":"20000","str5":"bgh","isnew":"true"},{"title":"BS","name":"","str1":"定番1","str2":"qw","str3":"175/65R14","str4":"300","str5":"oiu","isnew":"true"}]},{"account":"aa","adate":"2013/12/11","pricedetail":[{"title":"BS","name":"","str1":"定番1","str2":"qw","str3":"155/65R14","str4":"500","str5":"yui","isnew":"true"},{"title":"BS","name":"","str1":"定番2","str2":"qwff","str3":"155/65R14","str4":"500","str5":"yui","isnew":"true"}]}]
-	var LSJSON = new String('[{"account":"aa","adate":"2013/12/12","pricedetail":[{"title":"BS","name":"","str1":"定番1","str2":"qw","str3":"105/65R15","str4":"20000","str5":"bgh","isnew":"true"},{"title":"BS","name":"","str1":"定番1","str2":"qw","str3":"175/65R14","str4":"300","str5":"oiu","isnew":"true"}]},{"account":"aa","adate":"2013/12/11","pricedetail":[{"title":"BS","name":"","str1":"定番1","str2":"qw","str3":"155/65R14","str4":"500","str5":"yui","isnew":"true"},{"title":"BS","name":"","str1":"定番2","str2":"qwff","str3":"155/65R14","str4":"500","str5":"yui","isnew":"true"}]}]');
-	var NewStr = new String('{"account":"aa","adate":"2013/12/12","pricedetail":[{"title":"BS","name":"","str1":"定番1","str2":"qw","str3":"106/65R15","str4":"20000","str5":"bgh","isnew":"true"},{"title":"BS","name":"","str1":"定番1","str2":"qw","str3":"175/65R14","str4":"300","str5":"oiu","isnew":"true"}]}');
-	alert(ValidateLS(LSJSON,NewStr));
-	</script>
+
+
 	<form>
 		<input required="required">
 		<input type="submit">
 	</form>
+	<table border="2px">
+		<tr>
+			<td class="editable" width="100px">&nbsp;</td>
+			<td class="editable" width="100px">&nbsp;</td>
+			<td class="editable" width="100px">&nbsp;</td>
+			<td class="editable" width="100px">&nbsp;</td>
+			<td class="editable" width="100px">&nbsp;</td>
+		</tr>
+		<tr>
+			<td class="editable" width="100px">&nbsp;</td>
+			<td class="editable" width="100px">&nbsp;</td>
+			<td class="editable" width="100px">&nbsp;</td>
+			<td class="editable" width="100px">&nbsp;</td>
+			<td class="editable" width="100px">&nbsp;</td>
+		</tr>
+		<tr>
+			<td class="editable" width="100px">&nbsp;</td>
+			<td class="editable" width="100px">&nbsp;</td>
+			<td class="editable" width="100px">&nbsp;</td>
+			<td class="editable" width="100px">&nbsp;</td>
+			<td class="editable" width="100px">&nbsp;</td>
+		</tr>
+		<tr>
+			<td class="editable" width="100px">&nbsp;</td>
+			<td class="editable" width="100px">&nbsp;</td>
+			<td class="editable" width="100px">&nbsp;</td>
+			<td class="editable" width="100px">&nbsp;</td>
+			<td class="editable" width="100px">&nbsp;</td>
+		</tr>
+		<tr>
+			<td class="editable" width="100px">&nbsp;</td>
+			<td class="editable" width="100px">&nbsp;</td>
+			<td class="editable" width="100px">&nbsp;</td>
+			<td class="editable" width="100px">&nbsp;</td>
+			<td class="editable" width="100px">&nbsp;</td>
+		</tr>
+		<tr>
+			<td class="editable" width="100px">&nbsp;</td>
+			<td class="editable" width="100px">&nbsp;</td>
+			<td class="editable" width="100px">&nbsp;</td>
+			<td class="editable" width="100px">&nbsp;</td>
+			<td class="editable" width="100px">&nbsp;</td>
+		</tr>
+		<tr>
+			<td class="editable" width="100px">&nbsp;</td>
+			<td class="editable" width="100px">&nbsp;</td>
+			<td class="editable" width="100px">&nbsp;</td>
+			<td class="editable" width="100px">&nbsp;</td>
+			<td class="editable" width="100px">&nbsp;</td>
+		</tr>
+		<tr>
+			<td class="editable" width="100px">&nbsp;</td>
+			<td class="editable" width="100px">&nbsp;</td>
+			<td class="editable" width="100px">&nbsp;</td>
+			<td class="editable" width="100px">&nbsp;</td>
+			<td class="editable" width="100px">&nbsp;</td>
+		</tr>
+		<tr>
+			<td class="editable" width="100px">&nbsp;</td>
+			<td class="editable" width="100px">&nbsp;</td>
+			<td class="editable" width="100px">&nbsp;</td>
+			<td class="editable" width="100px">&nbsp;</td>
+			<td class="editable" width="100px">&nbsp;</td>
+		</tr>
+		<tr>
+			<td class="editable" width="100px">&nbsp;</td>
+			<td class="editable" width="100px">&nbsp;</td>
+			<td class="editable" width="100px">&nbsp;</td>
+			<td class="editable" width="100px">&nbsp;</td>
+			<td class="editable" width="100px">&nbsp;</td>
+		</tr>
+	</table>
+
+		<script src="/Web/js/jquery.js"></script>
+	<script type="text/javascript" src="/Web/js/validate.js"></script>
+	<script type="text/javascript">
+		jQuery(document).ready(function($) {
+			$(".editable").bind('click',clicked);
+		});
+	
+	</script>
 </body>
 </html>

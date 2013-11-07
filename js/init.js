@@ -6,7 +6,8 @@ $(document).ready(function() {
 
 	/*alert('[{"title":"BS","str1":"ミニバン","str2":"er","str3":"195/65R15"},{"title":"BS","str1":"ミニバン","str2":"er","str3":"205/60R16"}]')；
 	 */
-
+	 $(".edt").click(editable);
+	 
 	init(info,stw);
 });
 
@@ -33,6 +34,7 @@ function init(info,noinfo){
 	var tds = $(".editable");
 	//给所有td节点添加点击事件  
 	tds.click(tdclick);
+	
 	
 }
 function bindCre(event){
