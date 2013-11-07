@@ -1,9 +1,32 @@
 [{"title":"YO","str1":"定番1","str2":"yt","str3":"195/65R15"},{"title":"YO","str1":"定番2","str2":"rte","str3":"175/65R14"},{"title":"YO","str1":"ミニバン","str2":"ert","str3":"195/65R15"},{"title":"BS","str1":"定番1","str2":"qw","str3":"195/65R15"},{"title":"BS","str1":"定番1","str2":"qw","str3":"175/65R14"},{"title":"BS","str1":"定番1","str2":"qw","str3":"155/65R14"},{"title":"BS","str1":"定番1","str2":"qw","str3":"155/65R13"},{"title":"BS","str1":"定番2","str2":"we","str3":"195/65R15"},{"title":"BS","str1":"定番2","str2":"we","str3":"175/65R14"},{"title":"BS","str1":"定番2","str2":"we","str3":"155/65R14"},{"title":"BS","str1":"定番2","str2":"we","str3":"155/65R13"},{"title":"BS","str1":"ミニバン","str2":"er","str3":"195/65R15"},{"title":"BS","str1":"ミニバン","str2":"er","str3":"205/60R16"}]
 
+[
+  {
+    "title": "BS",
+    "df": "定番1",
+    "detail": [
+      {
+        "id":"",
+        "type": "175/65R",
+        "price": "",
+        "comment": ""
+      }
+    ]
+  }
+]
 
-[{"title":"BS","df":"定番1","detail":[{"type":"175/65R","price":"","comment":""}]}]
-
-
+  [{
+    "type": "降序",
+    "listOut": [{
+      "title": "升序",
+      "listIn":[{
+        "name":"升序",
+        "price":"",
+        "comment":"",
+        "bindID":""
+        }]
+    }]
+  }]
 [{"title":"BS","name":"","research":"","str1":"定番1","str2":"qw","str3":"195/65R15","price":"","note":""},{"title":"BS","name":"","research":"","str1":"定番1","str2":"qw","str3":"175/65R14","price":"","note":""},{"title":"BS","name":"","research":"","str1":"定番1","str2":"qw","str3":"155/65R14","price":"","note":""},{"title":"BS","name":"","research":"","str1":"定番1","str2":"qw","str3":"155/65R13","price":"","note":""},{"title":"BS","name":"","research":"","str1":"定番2","str2":"we","str3":"195/65R15","price":"","note":""}]
 
 {"type":"' + pjStr[tem].str3 + '","price":"","comment":""}
@@ -13,8 +36,196 @@
 
 
 
-[{"title":"BS","name":"","isnew":"true","str1":"定番1","str2":"qw","str3":"195/65R15","price":"","note":""},{"title":"BS","name":"","isnew":"true","str1":"定番1","str2":"qw","str3":"175/65R14","price":"","note":""},{"title":"BS","name":"","isnew":"true","str1":"定番1","str2":"qw","str3":"155/65R14","price":"","note":""},{"title":"BS","name":"","isnew":"true","str1":"定番1","str2":"qw","str3":"155/65R13","price":"","note":""},{"title":"BS","name":"","isnew":"true","str1":"定番1","str2":"yyt","str3":"195/65R15","price":"","note":""},{"title":"BS","name":"","isnew":"true","str1":"定番2","str2":"we","str3":"195/65R15","price":"","note":""},{"title":"BS","name":"","isnew":"true","str1":"定番2","str2":"we","str3":"175/65R14","price":"","note":""},{"title":"BS","name":"","isnew":"true","str1":"定番2","str2":"we","str3":"155/65R14","price":"","note":""},{"title":"BS","name":"","isnew":"true","str1":"定番2","str2":"we","str3":"155/65R13","price":"","note":""},{"title":"BS","name":"","isnew":"true","str1":"ミニバン","str2":"er","str3":"205/60R16","price":"","note":""},{"title":"BS","name":"","isnew":"true","str1":"ミニバン","str2":"er","str3":"195/65R15","price":"","note":""},{"title":"BS","name":"","isnew":"true","str1":"ミニバン","str2":"yy","str3":"195/65R15","price":"","note":""},{"title":"YO","name":"","isnew":"true","str1":"定番1","str2":"yt","str3":"195/65R15","price":"","note":""},{"title":"YO","name":"","isnew":"true","str1":"定番1","str2":"yt","str3":"175/65R14","price":"","note":""},{"title":"YO","name":"","isnew":"true","str1":"定番2","str2":"rte","str3":"175/65R14","price":"","note":""},{"title":"YO","name":"","isnew":"true","str1":"ミニバン","str2":"ert","str3":"195/65R15","price":"","note":""},{"title":"DU","name":"","isnew":"true","str1":"定番1","str2":"eert","str3":"195/65R15","price":"","note":""},{"title":"DU","name":"","isnew":"true","str1":"定番1","str2":"eert","str3":"155/65R13","price":"","note":""},{"title":"DU","name":"","isnew":"true","str1":"定番2","str2":"ffty","str3":"195/65R15","price":"","note":""},{"title":"DU","name":"","isnew":"true","str1":"定番2","str2":"ffty","str3":"155/65R14","price":"","note":""},{"title":"DU","name":"","isnew":"true","str1":"ミニバン","str2":"huy","str3":"195/65R15","price":"","note":""}]
-
+[{
+  "title": "BS",
+  "name": "",
+  "isnew": "true",
+  "str1": "定番1",
+  "str2": "qw",
+  "str3": "195/65R15",
+  "price": "",
+  "note": ""
+  }, {
+  "title": "BS",
+  "name": "",
+  "isnew": "true",
+  "str1": "定番1",
+  "str2": "qw",
+  "str3": "175/65R14",
+  "price": "",
+  "note": ""
+}, {
+  "title": "BS",
+  "name": "",
+  "isnew": "true",
+  "str1": "定番1",
+  "str2": "qw",
+  "str3": "155/65R14",
+  "price": "",
+  "note": ""
+}, {
+  "title": "BS",
+  "name": "",
+  "isnew": "true",
+  "str1": "定番1",
+  "str2": "qw",
+  "str3": "155/65R13",
+  "price": "",
+  "note": ""
+}, {
+  "title": "BS",
+  "name": "",
+  "isnew": "true",
+  "str1": "定番1",
+  "str2": "yyt",
+  "str3": "195/65R15",
+  "price": "",
+  "note": ""
+}, {
+  "title": "BS",
+  "name": "",
+  "isnew": "true",
+  "str1": "定番2",
+  "str2": "we",
+  "str3": "195/65R15",
+  "price": "",
+  "note": ""
+}, {
+  "title": "BS",
+  "name": "",
+  "isnew": "true",
+  "str1": "定番2",
+  "str2": "we",
+  "str3": "175/65R14",
+  "price": "",
+  "note": ""
+}, {
+  "title": "BS",
+  "name": "",
+  "isnew": "true",
+  "str1": "定番2",
+  "str2": "we",
+  "str3": "155/65R14",
+  "price": "",
+  "note": ""
+}, {
+  "title": "BS",
+  "name": "",
+  "isnew": "true",
+  "str1": "定番2",
+  "str2": "we",
+  "str3": "155/65R13",
+  "price": "",
+  "note": ""
+}, {
+  "title": "BS",
+  "name": "",
+  "isnew": "true",
+  "str1": "ミニバン",
+  "str2": "er",
+  "str3": "205/60R16",
+  "price": "",
+  "note": ""
+}, {
+  "title": "BS",
+  "name": "",
+  "isnew": "true",
+  "str1": "ミニバン",
+  "str2": "er",
+  "str3": "195/65R15",
+  "price": "",
+  "note": ""
+}, {
+  "title": "BS",
+  "name": "",
+  "isnew": "true",
+  "str1": "ミニバン",
+  "str2": "yy",
+  "str3": "195/65R15",
+  "price": "",
+  "note": ""
+}, {
+  "title": "YO",
+  "name": "",
+  "isnew": "true",
+  "str1": "定番1",
+  "str2": "yt",
+  "str3": "195/65R15",
+  "price": "",
+  "note": ""
+}, {
+  "title": "YO",
+  "name": "",
+  "isnew": "true",
+  "str1": "定番1",
+  "str2": "yt",
+  "str3": "175/65R14",
+  "price": "",
+  "note": ""
+}, {
+  "title": "YO",
+  "name": "",
+  "isnew": "true",
+  "str1": "定番2",
+  "str2": "rte",
+  "str3": "175/65R14",
+  "price": "",
+  "note": ""
+}, {
+  "title": "YO",
+  "name": "",
+  "isnew": "true",
+  "str1": "ミニバン",
+  "str2": "ert",
+  "str3": "195/65R15",
+  "price": "",
+  "note": ""
+}, {
+  "title": "DU",
+  "name": "",
+  "isnew": "true",
+  "str1": "定番1",
+  "str2": "eert",
+  "str3": "195/65R15",
+  "price": "",
+  "note": ""
+}, {
+  "title": "DU",
+  "name": "",
+  "isnew": "true",
+  "str1": "定番1",
+  "str2": "eert",
+  "str3": "155/65R13",
+  "price": "",
+  "note": ""
+}, {
+  "title": "DU",
+  "name": "",
+  "isnew": "true",
+  "str1": "定番2",
+  "str2": "ffty",
+  "str3": "195/65R15",
+  "price": "",
+  "note": ""
+}, {
+  "title": "DU",
+  "name": "",
+  "isnew": "true",
+  "str1": "定番2",
+  "str2": "ffty",
+  "str3": "155/65R14",
+  "price": "",
+  "note": ""
+}, {
+  "title": "DU",
+  "name": "",
+  "isnew": "true",
+  "str1": "ミニバン",
+  "str2": "huy",
+  "str3": "195/65R15",
+  "price": "",
+  "note": ""
+}]
 [{"account":"aa","adate":"2013/12/12","pricedetail":[{"title":"BS","name":"","str1":"定番1","str2":"qw","str3":"105/65R15","str4":"20000","str5":"bgh","isnew":"true"},{"title":"BS","name":"","str1":"定番1","str2":"qw","str3":"175/65R14","str4":"300","str5":"oiu","isnew":"true"}]},{"account":"aa","adate":"2013/12/11","pricedetail":[{"title":"BS","name":"","str1":"定番1","str2":"qw","str3":"155/65R14","str4":"500","str5":"yui","isnew":"true"},{"title":"BS","name":"","str1":"定番2","str2":"qwff","str3":"155/65R14","str4":"500","str5":"yui","isnew":"true"}]}]
 
 

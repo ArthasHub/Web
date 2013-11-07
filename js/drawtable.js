@@ -95,7 +95,102 @@ function draw(JSONStr, what) {
 
 }
 
+/*
+	[{
+		"title": "BS",
+		"df": "定番1",
+		"name":"yt"
+		"detail": [{
+			"bindID":"0++"
+			"id": ""
+			"type": "175/65R",
+			"price": "",
+			"comment": ""
+		}]
+	}]
+*/
 
+/*
+ [{
+    "type": "降序",
+    "listOut": [{
+      "title": "升序",
+      "listIn":[{
+        "name":"升序",
+        "price":"",
+        "comment":"",
+        "bindID":""
+        }]
+    }]
+  }]
+*/
+
+function drawByType(JSONStr) {
+	var JSONTEMP = JSONStr.slice(0);
+	// JSONTEMP.sort(sortPrice);
+
+
+	var item = $('<div ></div>');
+	var head = $('<div id="" class="item"><span>サイズ</span></div>');
+	var table = $('<table class="dataTable" border="2px;"></table>');
+	var th = $('<thead><tr> <td>タイヤサイズ</td>  <td>メーカー名</td>  <td>ブランド名</td>  <td>販売価格（4本税込）</td>  <td>備考</td> </tr></thead>');
+	//var th = $('<thead><tr> <td>{!$Label.column3}</td>  <td>{!$Label.column1}</td>  <td>{!$Label.column2}</td>  <td>{!$Label.column4}</td>  <td>{!$Label.column5}</td> </tr></thead>');
+	var tb = $('<tbody></tbody>');
+	console.log('*********************');
+
+	var list = new Array();
+	for (var i = 0; i < JSONTEMP.length; i++) {
+		for (var j = 0; j < JSONTEMP[i].detail.length; j++) {
+			var tem = JSONTEMP[i].detail[j];
+
+			var k = 0;
+			for (; k < list.length; k++) {
+				var temStr = $(list[k]).attr('id');
+				if (temStr == tem.type) {
+					break;
+				};
+			};
+			if (k == list.length) {
+				//new and init
+				var group = $('<tbody id="' + tem.type + '"></tbody>');
+				var tr = $('<tr id="' + tem.bindID + '"> <td>' + tem.type + '</td>  <td>' + JSONTEMP[i].title + '</td>  <td>' + JSONTEMP[i].name + '</td>  <td class="editable">' + tem.price + '</td>  <td class="editable">' + tem.comment + '</td> </tr>');
+				$(group).append(tr);
+
+				list.push(group);
+			} else {
+
+				//new
+				var flag = true;
+				$(list[k]).children('tr').children('td:nth-child(2)').each(function(index, el) {
+					if ($(el).html() == JSONTEMP[i].title) {
+						flag = false;
+						return flag;
+					}
+				});
+				//是本MAKER的第一行，flag = true；
+				//不是本MAKER的第一行 flag = false;
+
+				var tr = $('<tr id="' + tem.bindID + '" > <td >&nbsp;</td>  <td>' + (flag ? JSONTEMP[i].title : "&nbsp;") + '</td>  <td>' + JSONTEMP[i].name + '</td>  <td class="editable">' + tem.price + '</td>  <td class="editable">' + tem.comment + '</td> </tr>');
+				$(list[k]).append(tr);
+
+			}
+
+		};
+	};
+	list.sort(sortByType);
+
+	
+	$(list).each(function(index, el) {
+		$(tb).append($(el).children('tr'));
+	});
+
+	$(table).append(th);
+	$(table).append(tb);
+	$(item).append(head);
+	$(item).append(table);
+	$('#draw').append(item);
+
+}
 
 function drawTableByType(JSONStr) {
 	var JSONTEMP = JSONStr.slice(0);
@@ -141,7 +236,7 @@ function drawTableByType(JSONStr) {
 				});
 				//是本MAKER的第一行，flag = true；
 				//不是本MAKER的第一行 flag = false;
-				
+
 				var tr = $('<tr id="' + tem.bindID + '" > <td >&nbsp;</td>  <td>' + (flag ? JSONTEMP[i].title : "&nbsp;") + '</td>  <td>' + JSONTEMP[i].name + '</td>  <td class="editable">' + tem.price + '</td>  <td class="editable">' + tem.comment + '</td> </tr>');
 				$(list[k]).append(tr);
 
@@ -305,4 +400,3 @@ function sortByType(a, b) {
 		}
 	}
 }
-
