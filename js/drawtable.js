@@ -84,7 +84,7 @@ function draw(JSONStr, what) {
 			drawTableByDF(JSONStr);
 			console.log("****drawByDF*****");
 		} else if (what == "type") {
-			drawTableByType(JSONStr);
+			drawByType(JSONStr);
 			console.log("****drawByType****");
 		} else {
 
@@ -160,18 +160,89 @@ function drawByType(JSONStr) {
 			} else {
 
 				//new
+
 				var flag = true;
+				var s_idx = -1,
+					e_idx = -1;
 				$(list[k]).children('tr').children('td:nth-child(2)').each(function(index, el) {
-					if ($(el).html() == JSONTEMP[i].title) {
+					s_idx = index;
+					if ($(el).text() == JSONTEMP[i].title) {
 						flag = false;
+
 						return flag;
 					}
 				});
-				//是本MAKER的第一行，flag = true；
-				//不是本MAKER的第一行 flag = false;
 
-				var tr = $('<tr id="' + tem.bindID + '" > <td >&nbsp;</td>  <td>' + (flag ? JSONTEMP[i].title : "&nbsp;") + '</td>  <td>' + JSONTEMP[i].name + '</td>  <td class="editable">' + tem.price + '</td>  <td class="editable">' + tem.comment + '</td> </tr>');
-				$(list[k]).append(tr);
+				if (flag) {
+					//是本MAKER的第一行，flag = true；
+					var tr = $('<tr id="' + tem.bindID + '" > <td >&nbsp;</td>  <td>' + (flag ? JSONTEMP[i].title : "&nbsp;") + '</td>  <td>' + JSONTEMP[i].name + '</td>  <td class="editable">' + tem.price + '</td>  <td class="editable">' + tem.comment + '</td> </tr>');
+					$(list[k]).append(tr);
+				} else {
+					//不是本MAKER的第一行 flag = false;
+					if ($(list[k]).children('tr').size() == 1) {
+						//如果是第一条数据继续添加
+						var nameTem = $(list[k]).children('tr').children('td:eq(2)').text();
+						if (JSONTEMP[i].name < nameTem) {
+							var $trNode =  $(list[k]).children('tr:eq(1)');
+							var $text = $trNode.children('td:eq(0)').text();
+							$trNode.children('td:eq(1)').text('');
+
+							var tr = $('<tr id="' + tem.bindID + '" > <td >'+$text+'</td>  <td>' + JSONTEMP[i].title + '</td>  <td>' + JSONTEMP[i].name + '</td>  <td class="editable">' + tem.price + '</td>  <td class="editable">' + tem.comment + '</td> </tr>');
+							$(list[k]).children('tr').before(tr);
+						} else {
+							var tr = $('<tr id="' + tem.bindID + '" > <td >&nbsp;</td>  <td>&nbsp;</td>  <td>' + JSONTEMP[i].name + '</td>  <td class="editable">' + tem.price + '</td>  <td class="editable">' + tem.comment + '</td> </tr>');
+							$(list[k]).append(tr);
+						};
+					} else {
+						var whereToInsert = -1,
+							rec = -1;
+						$(list[k]).children('tr').slice(s_idx).each(function(index, el) {
+							var nameTem = $(el).children('td:eq(2)').text();
+							rec = index;
+							if (JSONTEMP[i].name < nameTem) {
+								whereToInsert = index;
+								return false;
+							}
+							return true;
+						});
+
+
+
+						// rec =0 whereToInsert = 0
+
+						//rec=n whereToInsert=n
+
+						//rec=0,n whereToInsert=-1
+						if (whereToInsert == -1) {
+							var tr = $('<tr id="' + tem.bindID + '" > <td >&nbsp;</td>  <td>&nbsp;</td>  <td>' + JSONTEMP[i].name + '</td>  <td class="editable">' + tem.price + '</td>  <td class="editable">' + tem.comment + '</td> </tr>');
+							
+							$(list[k]).append(tr);
+						} else {
+							if (whereToInsert == 0) {
+								var $tdNode = $(list[k]).children('tr:eq('+s_idx+')').children('td:eq(1)');
+								$tdNode.text('');
+								var $text = $tdNode.parent().children('td:eq(0)').text();
+
+								var tr = $('<tr id="' + tem.bindID + '" > <td >'+$text+'</td>  <td>' + JSONTEMP[i].title + '</td>  <td>' + JSONTEMP[i].name + '</td>  <td class="editable">' + tem.price + '</td>  <td class="editable">' + tem.comment + '</td> </tr>');
+								$tdNode.parent().children('td:eq(0)').text('');
+								$tdNode.parent().before(tr);
+							} else {
+								var $trNode = $(list[k]).children('tr:eq('+(whereToInsert+s_idx)+')');
+								var tr = $('<tr id="' + tem.bindID + '" > <td >&nbsp;</td>  <td>&nbsp;</td>  <td>' + JSONTEMP[i].name + '</td>  <td class="editable">' + tem.price + '</td>  <td class="editable">' + tem.comment + '</td> </tr>');
+								
+								$trNode.before(tr);
+							};
+
+
+						};
+
+
+
+					};
+
+				};
+
+
 
 			}
 
@@ -179,7 +250,7 @@ function drawByType(JSONStr) {
 	};
 	list.sort(sortByType);
 
-	
+
 	$(list).each(function(index, el) {
 		$(tb).append($(el).children('tr'));
 	});

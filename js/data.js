@@ -7,23 +7,50 @@ function doDataCol(isSave) {
 	var tem = dataCol(isSave);
 
 	if (tem) {
-		if (tem.title != "必須" && tem.str2 != "必須" && tem.str3 != "必須" && tem.price != "必須") {
-			if (isNum(tem.price)) {
-				if (noteIsLE(tem.note)) {
-					clearIpt();
-					backs.push(tem);
-					drawNew(JSON.parse("[" + JSON.stringify(tem) + "]"));
-				} else if (isSave) {
-				} else {
-					alert("This remark is too long!");
+		if (tem.title != "必須") {
+			if (tem.str2 != "必須") {
+				if (tem.str3 != "必須") {
+					if (tem.price != "必須") {
+						
+						if (isNum(tem.price)) {
+							if (noteIsLE(tem.note)) {
+								clearIpt();
+								backs.push(tem);
+								drawNew(JSON.parse("[" + JSON.stringify(tem) + "]"));
+							} else if (isSave) {
+
+							} else {
+								alert("This remark is too long!");
+							};
+						} else if (isSave) {
+
+						} else  {
+
+							alert("This price is not a number or too long!");
+						}
+
+					} else if(isSave){
+
+					}else{
+						alert('価格（4本税込）is required');
+					};
+				} else if(isSave){
+
+				}else{
+					alert('サイズ is required');
 				};
-			} else if (isSave) {
-			} else {
-				alert("This price is not a number or too long!");
-			}
+			} else if(isSave){
+
+			}else{
+
+				alert('ブランド is required')
+			};
+
+
 		} else if (isSave) {
+			
 		} else {
-			alert("Some required items must have data!");
+			alert("メーカー名 is required!");
 		}
 	}
 	var ted = new Array();

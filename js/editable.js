@@ -9,6 +9,7 @@ function tdclick() {
 	td.html(""); //也可以用td.empty();  
 	//3 建立文本框，也就是input的节点  
 	var input = $("<input>");
+	
 	//4 设置文本框值，即保存的文本内容  
 	input.attr("value", text);
 
@@ -24,6 +25,7 @@ function tdclick() {
 		tdNode.html(inputtext);
 		//5 让td重新拥有点击事件 
 		tdNode.click(tdclick);
+
 
 		var bindID = tdNode.parent('tr').attr('id');
 		var bindPrice = tdNode.parent('tr').children('td:eq(3)').html();
@@ -67,7 +69,9 @@ function tdclick() {
 	td.append(input); //也可input.appendto(td)  
 	//5.5让文本框文字被高亮选中  
 	//需要将jquery的对象转换成dom对象  
-
+	if(td.get(0) == td.parent('tr').children('td:eq(3)').get(0)){
+		td.children('input').attr('type', 'number');
+	}
 	inputdom.select();
 	//6 需要清除td上的点击事件  
 	td.unbind("click");
@@ -85,6 +89,7 @@ function newClick() {
 	td.html(""); //也可以用td.empty();  
 	//3 建立文本框，也就是input的节点  
 	var input = $("<input>");
+
 	//4 设置文本框值，即保存的文本内容  
 	input.attr("value", text);
 	//4.5让文本框可以响应lose焦点的事件  
@@ -150,6 +155,9 @@ function newClick() {
 	//5 将文本内容加入td  
 	td.append(input); //也可input.appendto(td)  
 	//5.5让文本框文字被高亮选中  
+	if(td.get(0) == td.parent('tr').children('td:eq(4)').get(0)){
+		td.children('input').attr('type', 'number');
+	}
 	//需要将jquery的对象转换成dom对象  
 	var inputdom = input.get(0);
 	inputdom.select();
