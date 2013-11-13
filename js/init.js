@@ -34,7 +34,9 @@ function init(info,noinfo){
 	var tds = $(".editable");
 	//给所有td节点添加点击事件  
 	tds.click(tdclick);
-	
+
+	//bind #Ipt5 keydown event
+	$("#ipt5").keydown(ipt5Val);
 	
 }
 function bindCre(event){

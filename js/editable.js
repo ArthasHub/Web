@@ -71,15 +71,18 @@ function tdclick() {
 		input.keydown(function(event) {
 
 			var $that = $(this);
-			var str = $that.val();
+			var keyCode = event.which;
+			if (keyCode >= 65 && keyCode <= 90) {
+				return false;
+			} else {
+				if ((keyCode >= 48 && keyCode <= 57) || (keyCode >= 96 && keyCode <= 105)) {
+					var str = $that.val();
+					if (str.length >= 8) {
+						return false;
+					}
+				};
 
-			if ( isNumSt(str) ) {
-				if (str.length >= 8) {
-					$that.val(str.substring(0, 7));
-				}
-			}else{
-				$that.val(str.substring(0, str.length-2));
-			}
+			};
 
 		});
 
@@ -175,8 +178,27 @@ function newClick() {
 	});
 
 	if (td.get(0) == td.parent('tr').children('td:eq(4)').get(0)) {
+
+		input.keydown(function(event) {
+
+			var $that = $(this);
+			var keyCode = event.which;
+			if (keyCode >= 65 && keyCode <= 90) {
+				return false;
+			} else {
+				if ((keyCode >= 48 && keyCode <= 57) || (keyCode >= 96 && keyCode <= 105)) {
+					var str = $that.val();
+					if (str.length >= 8) {
+						return false;
+					}
+				};
+
+			};
+
+		});
+
 		td.children('input').attr('type', 'number');
-		td.children('input').get(0).maxlength = 8;
+
 	}
 	//5 将文本内容加入td  
 	td.append(input); //也可input.appendto(td)  
@@ -225,4 +247,22 @@ function editable() {
 	inputdom.select();
 	//6 需要清除td上的点击事件  
 	td.unbind("click");
+}
+
+
+function ipt5Val(event) {
+	var $that = $(this);
+	var keyCode = event.which;
+	if (keyCode >= 65 && keyCode <= 90) {
+		return false;
+	} else {
+		if ((keyCode >= 48 && keyCode <= 57) || (keyCode >= 96 && keyCode <= 105)) {
+			var str = $that.val();
+			if (str.length >= 8) {
+				return false;
+			}
+		};
+
+	};
+
 }
