@@ -9,9 +9,10 @@ function tdclick() {
 	td.html(""); //也可以用td.empty();  
 	//3 建立文本框，也就是input的节点  
 	var input = $("<input>");
-	
+
 	//4 设置文本框值，即保存的文本内容  
 	input.attr("value", text);
+
 
 	//4.5让文本框可以响应lose焦点的事件  
 	input.blur(function(event) {
@@ -38,7 +39,7 @@ function tdclick() {
 				if ($alertContainer) {
 					$alertContainer.hide();
 				};
-				
+
 				for (var i = 0; i < DataObj.length; i++) {
 					for (var j = 0; j < DataObj[i].detail.length; j++) {
 						if (bindID == DataObj[i].detail[j].bindID) {
@@ -64,14 +65,33 @@ function tdclick() {
 		}
 	});
 	var inputdom = input[0];
-
-	//5 将文本内容加入td  
 	td.append(input); //也可input.appendto(td)  
+
+	if (td.get(0) == td.parent('tr').children('td:eq(3)').get(0)) {
+		input.keydown(function(event) {
+
+			var $that = $(this);
+			var str = $that.val();
+
+			if ( isNumSt(str) ) {
+				if (str.length >= 8) {
+					$that.val(str.substring(0, 7));
+				}
+			}else{
+				$that.val(str.substring(0, str.length-2));
+			}
+
+		});
+
+		td.children('input').attr('type', 'number');
+
+	} else {
+		input.get(0).maxLength = 50;
+	}
+	//5 将文本内容加入td  
 	//5.5让文本框文字被高亮选中  
 	//需要将jquery的对象转换成dom对象  
-	if(td.get(0) == td.parent('tr').children('td:eq(3)').get(0)){
-		td.children('input').attr('type', 'number');
-	}
+
 	inputdom.select();
 	//6 需要清除td上的点击事件  
 	td.unbind("click");
@@ -92,6 +112,7 @@ function newClick() {
 
 	//4 设置文本框值，即保存的文本内容  
 	input.attr("value", text);
+	input.get(0).maxlength = 50;
 	//4.5让文本框可以响应lose焦点的事件  
 	input.blur(function(event) {
 		var inputnode = $(this);
@@ -118,7 +139,7 @@ function newClick() {
 					$alertContainer.hide();
 				};
 
-				
+
 				for (var i = 0; i < backs.length; i++) {
 					if (backs[i].bindID == bindID) {
 						if ($.trim(title + str1 + str2 + str3 + price + note) != $.trim(inputtext)) {
@@ -152,12 +173,15 @@ function newClick() {
 
 
 	});
+
+	if (td.get(0) == td.parent('tr').children('td:eq(4)').get(0)) {
+		td.children('input').attr('type', 'number');
+		td.children('input').get(0).maxlength = 8;
+	}
 	//5 将文本内容加入td  
 	td.append(input); //也可input.appendto(td)  
 	//5.5让文本框文字被高亮选中  
-	if(td.get(0) == td.parent('tr').children('td:eq(4)').get(0)){
-		td.children('input').attr('type', 'number');
-	}
+
 	//需要将jquery的对象转换成dom对象  
 	var inputdom = input.get(0);
 	inputdom.select();

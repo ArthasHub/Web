@@ -1,14 +1,23 @@
 //validate.js validate all the param
 
 function isNum(str) {
-	var reg = /^[\d]{0,5}$/g;
+	var reg =  /^[\d]{0,8}$/g;
 	return reg.test(str);
 }
 
+function isNumSt(str) {
+	var reg =  /^[\d]/g;
+	return reg.test(str);
+}
 function noteIsLE(str) {
 	var reg = /^.{0,50}$/g;
 	return reg.test(str);
 }
+
+function isLt50(str){
+	return str.length<=50;
+}
+
 //没有中括号
 //return New leggle JSON
 
