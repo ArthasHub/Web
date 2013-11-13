@@ -3,6 +3,7 @@
 
 
 function sortPrice(a, b) {
+
 	if (a.str3 < b.str3) {
 		return 1
 	} else {
@@ -130,12 +131,7 @@ function drawByType(JSONStr) {
 	// JSONTEMP.sort(sortPrice);
 
 
-	var item = $('<div ></div>');
-	var head = $('<div id="" class="item"><span>サイズ</span></div>');
-	var table = $('<table class="dataTable" border="2px;"></table>');
-	var th = $('<thead><tr> <td>タイヤサイズ</td>  <td>メーカー名</td>  <td>ブランド名</td>  <td>販売価格（4本税込）</td>  <td>備考</td> </tr></thead>');
-	//var th = $('<thead><tr> <td>{!$Label.column3}</td>  <td>{!$Label.column1}</td>  <td>{!$Label.column2}</td>  <td>{!$Label.column4}</td>  <td>{!$Label.column5}</td> </tr></thead>');
-	var tb = $('<tbody></tbody>');
+
 	console.log('*********************');
 
 	var list = new Array();
@@ -183,11 +179,11 @@ function drawByType(JSONStr) {
 						//如果是第一条数据继续添加
 						var nameTem = $(list[k]).children('tr').children('td:eq(2)').text();
 						if (JSONTEMP[i].name < nameTem) {
-							var $trNode =  $(list[k]).children('tr:eq(1)');
+							var $trNode = $(list[k]).children('tr:eq(1)');
 							var $text = $trNode.children('td:eq(0)').text();
 							$trNode.children('td:eq(1)').text('');
 
-							var tr = $('<tr id="' + tem.bindID + '" > <td >'+$text+'</td>  <td>' + JSONTEMP[i].title + '</td>  <td>' + JSONTEMP[i].name + '</td>  <td class="editable">' + tem.price + '</td>  <td class="editable">' + tem.comment + '</td> </tr>');
+							var tr = $('<tr id="' + tem.bindID + '" > <td >' + $text + '</td>  <td>' + JSONTEMP[i].title + '</td>  <td>' + JSONTEMP[i].name + '</td>  <td class="editable">' + tem.price + '</td>  <td class="editable">' + tem.comment + '</td> </tr>');
 							$(list[k]).children('tr').before(tr);
 						} else {
 							var tr = $('<tr id="' + tem.bindID + '" > <td >&nbsp;</td>  <td>&nbsp;</td>  <td>' + JSONTEMP[i].name + '</td>  <td class="editable">' + tem.price + '</td>  <td class="editable">' + tem.comment + '</td> </tr>');
@@ -215,21 +211,21 @@ function drawByType(JSONStr) {
 						//rec=0,n whereToInsert=-1
 						if (whereToInsert == -1) {
 							var tr = $('<tr id="' + tem.bindID + '" > <td >&nbsp;</td>  <td>&nbsp;</td>  <td>' + JSONTEMP[i].name + '</td>  <td class="editable">' + tem.price + '</td>  <td class="editable">' + tem.comment + '</td> </tr>');
-							
+
 							$(list[k]).append(tr);
 						} else {
 							if (whereToInsert == 0) {
-								var $tdNode = $(list[k]).children('tr:eq('+s_idx+')').children('td:eq(1)');
+								var $tdNode = $(list[k]).children('tr:eq(' + s_idx + ')').children('td:eq(1)');
 								$tdNode.text('');
 								var $text = $tdNode.parent().children('td:eq(0)').text();
 
-								var tr = $('<tr id="' + tem.bindID + '" > <td >'+$text+'</td>  <td>' + JSONTEMP[i].title + '</td>  <td>' + JSONTEMP[i].name + '</td>  <td class="editable">' + tem.price + '</td>  <td class="editable">' + tem.comment + '</td> </tr>');
+								var tr = $('<tr id="' + tem.bindID + '" > <td >' + $text + '</td>  <td>' + JSONTEMP[i].title + '</td>  <td>' + JSONTEMP[i].name + '</td>  <td class="editable">' + tem.price + '</td>  <td class="editable">' + tem.comment + '</td> </tr>');
 								$tdNode.parent().children('td:eq(0)').text('');
 								$tdNode.parent().before(tr);
 							} else {
-								var $trNode = $(list[k]).children('tr:eq('+(whereToInsert+s_idx)+')');
+								var $trNode = $(list[k]).children('tr:eq(' + (whereToInsert + s_idx) + ')');
 								var tr = $('<tr id="' + tem.bindID + '" > <td >&nbsp;</td>  <td>&nbsp;</td>  <td>' + JSONTEMP[i].name + '</td>  <td class="editable">' + tem.price + '</td>  <td class="editable">' + tem.comment + '</td> </tr>');
-								
+
 								$trNode.before(tr);
 							};
 
@@ -251,14 +247,28 @@ function drawByType(JSONStr) {
 	list.sort(sortByType);
 
 
+	var item = $('<div ></div>');
+
 	$(list).each(function(index, el) {
+		var typeStr = el.children('tr:eq(0)').children('td:eq(0)').text();
+
+		var head = $('<div id="" class="item"><span>' + typeStr + '</span></div>');
+		var table = $('<table class="dataTable" border="2px;"></table>');
+		var th = $('<thead><tr> <td class="FistColHiden"> </td>  <td>メーカー名</td>  <td>ブランド名</td>  <td>販売価格（4本税込）</td>  <td>備考</td> </tr></thead>');
+		//var th = $('<thead><tr> <td>{!$Label.column3}</td>  <td>{!$Label.column1}</td>  <td>{!$Label.column2}</td>  <td>{!$Label.column4}</td>  <td>{!$Label.column5}</td> </tr></thead>');
+		var tb = $('<tbody></tbody>');
+		el.children('tr:eq(0)').children('td:eq(0)').text('');
+		el.find('td:nth-child(1)').addClass('FistColHiden');
+
 		$(tb).append($(el).children('tr'));
+
+		$(table).append(th);
+		$(table).append(tb);
+		$(item).append(head);
+		$(item).append(table);
 	});
 
-	$(table).append(th);
-	$(table).append(tb);
-	$(item).append(head);
-	$(item).append(table);
+
 	$('#draw').append(item);
 
 }
