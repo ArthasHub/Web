@@ -179,9 +179,10 @@ function drawByType(JSONStr) {
 						//如果是第一条数据继续添加
 						var nameTem = $(list[k]).children('tr').children('td:eq(2)').text();
 						if (JSONTEMP[i].name < nameTem) {
-							var $trNode = $(list[k]).children('tr:eq(1)');
+							var $trNode = $(list[k]).children('tr:eq(0)');
 							var $text = $trNode.children('td:eq(0)').text();
 							$trNode.children('td:eq(1)').text('');
+							$trNode.children('td:eq(0)').text('');
 
 							var tr = $('<tr id="' + tem.bindID + '" > <td >' + $text + '</td>  <td>' + JSONTEMP[i].title + '</td>  <td>' + JSONTEMP[i].name + '</td>  <td class="editable">' + tem.price + '</td>  <td class="editable">' + tem.comment + '</td> </tr>');
 							$(list[k]).children('tr').before(tr);
