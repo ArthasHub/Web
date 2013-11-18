@@ -8,8 +8,8 @@ function doDataCol(isSave) {
 
 	if (tem) {
 		if (tem.title != "必須") {
-			if (tem.str2 != "必須") {
-				if (tem.str3 != "必須") {
+			if (tem.str2 != "必須") 
+{				if (tem.str3 != "必須") {
 					if (tem.price != "必須") {
 						
 						if (isNum(tem.price)) {
