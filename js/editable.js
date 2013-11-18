@@ -88,7 +88,9 @@ function tdclick() {
 
 		td.children('input').attr('type', 'number');
 
-	} else {
+	} else if (td.get(0) == td.parent('tr').children('td:eq(4)').get(0)) {//是否是备注
+		input.get(0).maxLength = 30;
+	} else{
 		input.get(0).maxLength = 50;
 	}
 	//5 将文本内容加入td  
@@ -179,27 +181,13 @@ function newClick() {
 
 	if (td.get(0) == td.parent('tr').children('td:eq(4)').get(0)) {
 
-		input.keydown(function(event) {
-
-			var $that = $(this);
-			var keyCode = event.which;
-			if (keyCode >= 65 && keyCode <= 90) {
-				return false;
-			} else {
-				if ((keyCode >= 48 && keyCode <= 57) || (keyCode >= 96 && keyCode <= 105)) {
-					var str = $that.val();
-					if (str.length >= 8) {
-						return false;
-					}
-				};
-
-			};
-
-		});
+		input.keydown(ipt5Val);
 
 		td.children('input').attr('type', 'number');
 
-	}
+	}else if(td.get(0) == td.parent('tr').children('td:eq(5)').get(0)) {//是否是备注
+		input.get(0).maxLength = 30;
+	} 
 	//5 将文本内容加入td  
 	td.append(input); //也可input.appendto(td)  
 	//5.5让文本框文字被高亮选中  
