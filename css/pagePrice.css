@@ -1,0 +1,151 @@
+  div.divTitle{
+            margin-bottom:-1px;
+            margin-top:-1px;
+            width:100%;
+            color:white;
+            background-color: #708BB2;
+            height:20px;
+            font-size:16px;
+            font-weight:bold;     
+            text-indent:1em;
+            border-bottom:0px solid #FFFFFF;
+            line-height:20px;
+            
+          
+        }
+        
+        table.dataTable{
+          
+            width:100%;
+            
+            font-size:13px;
+        
+            overflow:auto;   
+
+            border:0px;
+            
+            border-top: 2px solid #e3a246;
+          
+            border-collapse:collapse;
+
+	   table-layout: fixed; 
+            
+        }
+        table.dataTable tr{           
+            height:20px;
+            border:0px;
+        }
+        table.dataTable td{
+        
+      
+         text-indent:1em;
+         border:0px;
+         border-left: 1px solid #FFFFFF;
+	
+        
+        }
+    
+        
+        table.dataTable tr:nth-child(odd){
+    
+        background-color: #FFFFFF;
+        
+        }
+        table.dataTable tr:nth-child(even){
+        background-color: #EEEEEE;
+        
+        }
+        table.dataTable thead tr:nth-child(1){
+        background-color: lightgray;
+
+        }
+        table.tableNew{
+        border: 0px solid white;
+        width:90%;
+        
+        font-size:13px;
+         border-collapse:collapse;
+	    table-layout: fixed; 
+        }
+        
+        table.tableNew tr{
+         height:20px;
+          border:0px;
+        }
+        table.tableNew tr:nth-child(odd){
+        background-color: #FFFFFF;
+        border:0px;
+        }
+        table.tableNew tr:nth-child(even){
+        background-color: #EEEEEE;
+        border:0px;
+        }
+	    table.tableNew tr:nth-child(1){
+        background-color: lightgray;
+
+        }
+        table.tableNew tr td{
+        width:145px;
+        text-indent:1em;
+        border:0px;
+        border-left: 1px solid #FFFFFF;
+	overflow:hidden; 
+	white-space:nowrap;
+        text-overflow:ellipsis;
+        }
+table.tableNew tr td:nth-child(3){
+overflow:visible; 
+white-space:normal;
+text-overflow:ellipsis;
+word-break:break-all;
+
+}
+table.tableNew tr td:nth-child(6){
+overflow:visible; 
+white-space:normal;
+text-overflow:ellipsis;
+word-break:break-all;
+
+}
+        input.gray{
+        color:gray;
+        }
+        input.black{
+        color:black;
+        }
+        table.topTable tr td{
+          height:40px;
+        }
+        .FistColHiden {
+            width: 0px;
+            display: none;
+        }
+       td{
+           word-break:break-all;
+       }
+	input {
+			width: 90%
+		}
+
+.b1{margin-left:800px; margin-top:30px}
+.b1 u{color:#33cccc}
+.b1 u a{color:#33cccc; cursor:pointer}
+.b2{margin-left:30px; margin-top:30px}
+.b2 tr td img{height:35px; width:35px}
+.b2trtd1{height:0; width:0; border:0}
+.b2trtd2{color:#000000}
+.b2trtd2 u label{cursor:pointer}
+.b2trtd3{margin-left:20px}
+.b2trtd4{margin-left:50px; border-radius:5px; height:40px; width:60px}
+.b3{margin:20px}
+.b4{margin-left:20px}
+.b5{margin-left:20px; }
+.b51{float:left}
+.b51 table{margin-bottom:100px}
+.b51table1{background-color:lightgray; height:15px}
+.b51table2 td input{width:120px}
+.b52 input{height:40px; width:40px; margin-left:0px; margin-top:10px; border-radius:0px}
+.b6{margin-bottom:400px}
+
+
+		

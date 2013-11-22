@@ -1,21 +1,22 @@
 //validate.js validate all the param
 
 function isNum(str) {
-	var reg =  /^[\d]{0,8}$/g;
+	var reg = /^[\d]{0,8}$/g;
 	return reg.test(str);
 }
 
 function isNumSt(str) {
-	var reg =  /^[\d]/g;
+	var reg = /^[\d]/g;
 	return reg.test(str);
 }
+
 function noteIsLE(str) {
 	var reg = /^.{0,50}$/g;
 	return reg.test(str);
 }
 
-function isLt50(str){
-	return str.length<=50;
+function isLt50(str) {
+	return str.length <= 50;
 }
 
 //没有中括号
@@ -38,3 +39,12 @@ function ValidateLS(LSStr, NewStr) {
 }
 var locked = false;
 var dataWell = false;
+
+
+function encodeHTML(str) {
+	var div = document.createElement("div");
+	var text = document.createTextNode(str);
+	div.appendChild(text);
+	return div.innerHTML;
+}
+

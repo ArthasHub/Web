@@ -8,11 +8,8 @@
 </head>
 	<style type="text/css">
 		
-
-	
-		td { 
-			width: 180px;
-			
+		input {
+			width: 100%
 		}
 		table {
 			
@@ -45,8 +42,27 @@
 		td{
 			word-wrap:break-word;
 		}
+		#newDraw tr td:nth-child(1) {
+			width: 150px;
+		}
+		#newDraw tr td:nth-child(2) {
+			width: 150px;
+		}
+		#newDraw tr td:nth-child(3) {
+			width: 40%;
+		}
+		#newDraw tr td:nth-child(4) {
+			width: 150px;
+		}
+		#newDraw tr td:nth-child(5) {
+			width: 150px;
+		}
+		#newDraw tr td:nth-child(6) {
+			width: 30%
+		}
 	</style>
 	<link rel="stylesheet" type="text/css" href="/Web/css/jquery.alert.css">
+	<link rel="stylesheet" type="text/css" href="/Web/css/pagePrice.css">
 <body>
 	<table class="" border="2px" >
 		<thead>
@@ -65,7 +81,6 @@
 		</tbody>
 	</table>
 
-	
 
 	<div id="draw"></div>
 	<a href="javascript:alert(data())" >我要飞</a>
@@ -79,50 +94,6 @@
 	</select>
 
 	<input type="button" id="cre" value="添加数据"/>
-
-	<table id="newDraw" style="border: solid thin black;width:800px">
-		<tr style="background-color: lightgray">
-			<td> <font color="red">メーカー名</font>
-			</td>
-			<td>タイプ</td>
-			<td> <font color="red">ブランド</font>
-
-			</td>
-			<td>
-				<font color="red">サイズ</font>
-
-			</td>
-			<td>
-				<font color="red">価格（4本税込）</font>
-
-			</td>
-			<td>備考</td>
-		</tr>
-		<tr>
-			<td>
-				<input id="ipt1" width="130px"  type="text" value="必須" onfocus="if(this.value==defaultValue){this.value='';this.className='black'}"
-                                onblur="if(!value){this.value=defaultValue;this.className='gray'}"/>
-			</td>
-			<td>
-				<input id="ipt2" width="130px" type="text" />
-			</td>
-			<td>
-				<input id="ipt3" width="130px" type="text" value="必須" onfocus="if(this.value==defaultValue){this.value='';this.className='black'}"
-                                onblur="if(!value){this.value=defaultValue;this.className='gray'}"/>
-			</td>
-			<td>
-				<input id="ipt4" width="130px" type="text" value="必須" onfocus="if(this.value==defaultValue){this.value='';this.className='black'}"
-                                onblur="if(!value){this.value=defaultValue;this.className='gray'}"/>
-			</td>
-			<td>
-				<input id="ipt5" width="130px" type="text" value="必須" onfocus="if(this.value==defaultValue){this.value='';this.className='black'}"
-                                onblur="if(!value){this.value=defaultValue;this.className='gray'}"/>
-			</td>
-			<td>
-				<input id="ipt6" width="130px" type="text"/>
-			</td>
-		</tr>
-	</table>
 
 	<table border="2px">
 		<tr>
@@ -147,6 +118,53 @@
 			<td class="edt" width="100px">haha</td>
 		</tr>
 	</table>
+
+	<div class="b5" >
+     <div class="b51" >
+      <table id="newDraw" class="tableNew" >
+         <tr class="b51table1" >
+            <td>
+            <font color="red" >{!$Label.Pagecolumn1}</font>
+            </td>
+            <td>
+            {!$Label.DFName}
+
+            </td>
+            <td>
+            <font color="red" >{!$Label.Pagecolumn2}</font>
+
+            </td>
+            <td>
+            <font color="red" >{!$Label.Size}</font>
+
+            </td>
+            <td>
+           <font color="red" > {!$Label.Pagecolumn4}</font>
+
+            </td>
+            <td>
+           {!$Label.Pagecolumn5}
+
+            </td>          
+         </tr>
+         
+         
+         <tr class="b51table2" >
+           <td ><input id="ipt1" maxlength="50" type="text" value="{!$Label.Must}" onfocus="if(this.value==defaultValue){this.value='';this.className='black'}" onblur="if(!value){this.value=defaultValue;this.className='gray'}" class="gray" /></td>
+           <td ><input id="ipt2" maxlength="50" type="text" /></td>
+           <td > <input id="ipt3" maxlength="50" type="text" value="{!$Label.Must}" onfocus="if(this.value==defaultValue){this.value='';this.className='black'}" onblur="if(!value){this.value=defaultValue;this.className='gray'}" class="gray" /></td>
+           <td > <input id="ipt4" maxlength="50" type="text" value="{!$Label.Must}" onfocus="if(this.value==defaultValue){this.value='';this.className='black'}" onblur="if(!value){this.value=defaultValue;this.className='gray'}" class="gray" /></td>
+           <td > <input id="ipt5" type="number" value="{!$Label.Must}" onfocus="if(this.value==defaultValue){this.value='';this.className='black'}" onblur="if(!value){this.value=defaultValue;this.className='gray'}" class="gray" /></td>
+           <td > <input id="ipt6" maxlength="50" type="text" /></td>          
+         </tr>
+      </table>
+      </div>
+      <div class="b52" >
+                 
+          <input type="button" id="cre" value="+" />       
+         
+       </div>  
+   </div>
 
 	<button id="btn">hahahahh</button>
 	<div id="te"></div>

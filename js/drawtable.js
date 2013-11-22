@@ -1,5 +1,5 @@
 // DataJSON = new String('[{"title":"BS","name":"","research":"","str1":"定番1","str2":"qw","str3":"195/65R15","price":"","note":""},{"title":"BS","name":"","research":"","str1":"定番1","str2":"qw","str3":"175/65R14","price":"","note":""},{"title":"BS","name":"","research":"","str1":"定番1","str2":"qw","str3":"155/65R14","price":"","note":""},{"title":"BS","name":"","research":"","str1":"定番1","str2":"qw","str3":"155/65R13","price":"","note":""},{"title":"BS","name":"","research":"","str1":"定番2","str2":"we","str3":"195/65R15","price":"","note":""},{"title":"BS","name":"","research":"","str1":"定番2","str2":"we","str3":"175/65R14","price":"","note":""},{"title":"BS","name":"","research":"","str1":"定番2","str2":"we","str3":"155/65R14","price":"","note":""},{"title":"BS","name":"","research":"","str1":"定番2","str2":"we","str3":"155/65R13","price":"","note":""},{"title":"BS","name":"","research":"","str1":"ミニバン","str2":"er","str3":"205/60R16","price":"","note":""},{"title":"BS","name":"","research":"","str1":"ミニバン","str2":"er","str3":"195/65R15","price":"","note":""},{"title":"YO","name":"","research":"","str1":"定番1","str2":"yt","str3":"195/65R15","price":"","note":""},{"title":"YO","name":"","research":"","str1":"定番2","str2":"rte","str3":"175/65R14","price":"","note":""},{"title":"YO","name":"","research":"","str1":"ミニバン","str2":"ert","str3":"195/65R15","price":"","note":""},{"title":"DU","name":"","research":"","str1":"定番1","str2":"eert","str3":"195/65R15","price":"","note":""},{"title":"DU","name":"","research":"","str1":"定番1","str2":"eert","str3":"155/65R13","price":"","note":""},{"title":"DU","name":"","research":"","str1":"定番2","str2":"ffty","str3":"195/65R15","price":"","note":""},{"title":"DU","name":"","research":"","str1":"定番2","str2":"ffty","str3":"155/65R14","price":"","note":""},{"title":"DU","name":"","research":"","str1":"ミニバン","str2":"huy","str3":"195/65R15","price":"","note":""}]');
-
+g_Width = "120px";
 
 
 function sortPrice(a, b) {
@@ -248,9 +248,10 @@ function drawByType(JSONStr) {
 	list.sort(sortByType);
 
 
-	var item = $('<div ></div>');
+	var items = new Array();
 
 	$(list).each(function(index, el) {
+		var item = $('<div ></div>');
 		var typeStr = el.children('tr:eq(0)').children('td:eq(0)').text();
 
 		var head = $('<div id="" class="item"><span>' + typeStr + '</span></div>');
@@ -267,10 +268,18 @@ function drawByType(JSONStr) {
 		$(table).append(tb);
 		$(item).append(head);
 		$(item).append(table);
+		items.push(item);
 	});
 
 
-	$('#draw').append(item);
+	$(items).each(function(index, el) {
+		var $trs = el.children('table').find('tr');
+		$trs.children('td:nth-child(2)').attr('width', g_Width);
+		$trs.children('td:nth-child(3)').attr('width', "40%");
+		$trs.children('td:nth-child(4)').attr('width', g_Width);
+		$trs.children('td:nth-child(5)').attr('width', "30%");
+		el.appendTo('#draw');	
+	});
 
 }
 
@@ -377,8 +386,18 @@ function drawTableByTitle(JSONStr) {
 	};
 
 	for (var w = 0; w < items.length; w++) {
+		items[w].children('table').attr('width', '100%');
+		var $trs =  items[w].children('table').find('tr');
+		$trs.children('td:nth-child(1)').attr('width', g_Width);
+		$trs.children('td:nth-child(2)').attr('width', '40%');
+		$trs.children('td:nth-child(3)').attr('width', g_Width);
+		$trs.children('td:nth-child(4)').attr('width', g_Width);
+		$trs.children('td:nth-child(5)').attr('width', '30%');
+
 		$("#draw").append(items[w]);
 	};
+
+
 }
 
 function drawTableByDF(JSONStr) {
@@ -420,6 +439,13 @@ function drawTableByDF(JSONStr) {
 	};
 
 	for (var w = 0; w < items.length; w++) {
+		items[w].children('table').attr('width', '100%');
+		var $trs =  items[w].children('table').find('tr');
+		$trs.children('td:nth-child(1)').attr('width', g_Width);
+		$trs.children('td:nth-child(2)').attr('width', '40%');
+		$trs.children('td:nth-child(3)').attr('width', g_Width);
+		$trs.children('td:nth-child(4)').attr('width', g_Width);
+		$trs.children('td:nth-child(5)').attr('width', '30%');
 		$("#draw").append(items[w]);
 	};
 }
@@ -440,9 +466,15 @@ function bindData(JSONBind) {
 function drawNew(tem) {
 	for (var i = 0; i < tem.length; i++) {
 		var newTr = $("<tr id='" + tem[i].bindID + "' ><td class='editNew'>" + tem[i].title + "</td><td class='editNew'>" + tem[i].str1 + "</td><td class='editNew'>" + tem[i].str2 + "</td><td class='editNew'>" + tem[i].str3 + "</td> <td class='editNew'>" + tem[i].price + "</td> <td class='editNew'>" + tem[i].note + "</td></tr>");
-
+		$(newTr).children('td:eq(0)').attr('width', g_Width);
+		$(newTr).children('td:eq(1)').attr('width', g_Width);
+		$(newTr).children('td:eq(2)').attr('width', "40%");
+		$(newTr).children('td:eq(3)').attr('width', g_Width);
+		$(newTr).children('td:eq(4)').attr('width', g_Width);
+		$(newTr).children('td:eq(5)').attr('width', "30%");
 		$("#newDraw").children('tbody').append($(newTr));
 	};
+	
 	var tdd = $(".editNew");
 	tdd.unbind("click");
 	tdd.click(newClick);

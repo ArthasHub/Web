@@ -8,10 +8,10 @@ function doDataCol(isSave) {
 
 	if (tem) {
 		if (tem.title != "必須") {
-			if (tem.str2 != "必須") 
-{				if (tem.str3 != "必須") {
+			if (tem.str2 != "必須") {
+				if (tem.str3 != "必須") {
 					if (tem.price != "必須") {
-						
+
 						if (isNum(tem.price)) {
 							if (noteIsLE(tem.note)) {
 								clearIpt();
@@ -24,31 +24,31 @@ function doDataCol(isSave) {
 							};
 						} else if (isSave) {
 
-						} else  {
+						} else {
 
 							alert("This price is not a number or too long!");
 						}
 
-					} else if(isSave){
+					} else if (isSave) {
 
-					}else{
+					} else {
 						alert('価格（4本税込）is required');
 					};
-				} else if(isSave){
+				} else if (isSave) {
 
-				}else{
+				} else {
 					alert('サイズ is required');
 				};
-			} else if(isSave){
+			} else if (isSave) {
 
-			}else{
+			} else {
 
 				alert('ブランド is required')
 			};
 
 
 		} else if (isSave) {
-			
+
 		} else {
 			alert("メーカー名 is required!");
 		}
@@ -71,12 +71,12 @@ function dataCol(isSave) {
 	} else {
 		bindID = bindID - 1;
 	}
-	var title = $("#ipt1").val();
-	var str1 = $("#ipt2").val();
-	var str2 = $("#ipt3").val();
-	var str3 = $("#ipt4").val();
-	var price = $("#ipt5").val();
-	var note = $("#ipt6").val();
+	var title = encodeHTML($("#ipt1").val());
+	var str1 = encodeHTML($("#ipt2").val());
+	var str2 = encodeHTML($("#ipt3").val());
+	var str3 = encodeHTML($("#ipt4").val());
+	var price = encodeHTML($("#ipt5").val());
+	var note = encodeHTML($("#ipt6").val());
 	var i = 0;
 	if (title + str2 + str3 + price + note != "") {
 

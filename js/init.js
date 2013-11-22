@@ -37,6 +37,7 @@ function init(info,noinfo){
 
 	//bind #Ipt5 keydown event
 	$("#ipt5").keydown(ipt5Val);
+	//declare goble var width
 	
 }
 function bindCre(event){

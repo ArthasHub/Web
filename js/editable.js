@@ -19,7 +19,7 @@ function tdclick() {
 		var inputnode = $(this);
 		//2 获取当前文本框的内容
 
-		var inputtext = inputnode.val();
+		var inputtext = encodeHTML(inputnode.val());
 		//3 清空td里面的内容  
 		var tdNode = inputnode.parent();
 		//4 保存文本框的内容填充到td中  
@@ -123,7 +123,7 @@ function newClick() {
 		var inputnode = $(this);
 		//2 获取当前文本框的内容
 
-		var inputtext = inputnode.val();
+		var inputtext = encodeHTML(inputnode.val());
 		//3 清空td里面的内容  
 		var tdNode = inputnode.parent();
 		//4 保存文本框的内容填充到td中  

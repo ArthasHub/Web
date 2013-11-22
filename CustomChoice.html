@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>CustChoice</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script type="text/javascript" src="./build/yui/yui-min.js"></script>
+	<script type="text/javascript" src="./js/CustChoice.js"></script>
+	<style type="text/css">
+		#top{
+			position: fixed;
+			left: 0px,
+			top:0px;
+			height: 150px;
+			width: 100%;
+		}
+		#dataTable{
+			left: 0px;
+			top:150px;
+			position: absolute;
+		}
+		div{
+			display: block;
+
+		}
+		#header {
+		    width:100%;
+		    padding-top:9px;
+		    padding-bottom:9px;
+		    padding-left:20px;
+		    background-color:#3198d8;
+		    color:#FFFFFF;
+		    font-family:"�ҥ饮�νǥ� Pro W3","�ᥤ�ꥪ","�ͣ� �����å�",Osaka,"�ҥ饮�νǥ� Pro W3",sans-serif;
+		    font-size:20px;
+		}
+		/* main ---------------------- */
+		.main {
+		    //height:130px;
+		    box-sizing:border-box;
+		}
+		/* contents ---------------------- */
+		#contents {
+		    float:left;
+		    height:100%;
+		    box-sizing:border-box;
+		    overflow:hidden;
+		}
+		#contents div{
+			float: left;
+		}
+		.contents_title {
+		    padding-top:6px;
+		    padding-bottom:6px;
+		    padding-left:18px;
+		    padding-right:18px;
+		    font-size:20px;
+		    font-weight:bold;
+		    color:#000000;
+		}
+		.contents_title2 {
+		    padding-top:6px;
+		    padding-bottom:0px;
+		    padding-left:18px;
+		    padding-right:30px;
+		    margin-left: 20px;
+		    font-size:15px;
+		   	font-weight:bold;
+		    color:#000000;
+		}
+
+	</style>
+</head>
+<body>
+	<div class="yui3-skin-sam">
+
+		<div id="top" >
+			<div id="header">価格情報入力ツール</div>
+			<div id="contents">
+				<div class="contents_title">取引先を選択してください</div><br/>
+				<div class="contents_title2">
+                    <div>
+                        <input checked="true" name="radiobutton" type="radio" value="1">
+                        <font>
+                            取引先名（部分一致）
+                        </font>
+                        
+                        <br>
+                        <input name="radiobutton" type="radio" value="2">
+                        <font>
+                            得意先コード検索（前方一致）
+                        </font>
+                        
+                    </div>
+
+                    <div>
+                        <input id="search" onkeydown="if(event.keyCode==13){SearchTest(); return false; }" type="text">
+                        
+                        <input onclick="search();" type="button" value="検索">
+                        <span>
+                            <font>
+                                チャネル
+                            </font>
+                        </span>
+                        <select id="mySelected" onchange="getReusltBySelect()" width="30px">
+                            <option value="--なし--">
+                                --なし--
+                            </option>
+                        <option value="直販">直販</option><option value="間販その他">間販その他</option><option value="ＣＤ">ＣＤ</option><option value="ＲＳ">ＲＳ</option><option value="ＳＳ">ＳＳ</option><option value="ＡＳ">ＡＳ</option><option value="タ専">タ専</option></select>
+                    </div>
+
+                    <div>
+                        <input onclick="UpdatePage()" type="button" value="更新">
+                    </div>
+                            
+                </div>
+		</div>
+
+		<div id="dataTable" style="width:100%;"></div>
+	</div>
+
+</body>
+</html>
